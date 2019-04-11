@@ -2,23 +2,32 @@ import processing.core.PApplet;
 
 public class Loading_Text extends PApplet
 {
+	String message = null;
+	float text_x = 0;
+	float text_y = 0;
+
+	Loading_Text(float x, float y, String message)
+	{
+		this.text_x = x;
+		this.text_y = y;
+		this.message = message;
+	}
+
 	public void render()
 	{
-		text("Loading", 30, 30);
-
+		text(message, text_x, text_y);
 	}
 
 	public void update()
 	{
-		float text_x = 50;
-		float text_y = 50;
-
 		float timer = 0;
 		while (timer != 30000)
 		{
-			for(int i=0; i )
-			text("Loading", text_x, text_y);
-
+			for (int i = 0; i < 360; i++)
+			{
+				fill(0, 51);
+				text(message, text_x, text_y);
+			}
 			timer++;
 		}
 	}

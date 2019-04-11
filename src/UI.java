@@ -1,13 +1,14 @@
 import java.util.ArrayList;
 
+import ddf.minim.AudioPlayer;
+import ddf.minim.Minim;
 import processing.core.PApplet;
+import processing.core.PFont;
 import processing.data.Table;
 import processing.data.TableRow;
 
-
 public class UI extends PApplet
 {
-
 	private double bx;
 	private double by;
 	private int box_size = 75;
@@ -15,6 +16,12 @@ public class UI extends PApplet
 	boolean locked = false;
 	float xOffset = 0;
 	float yOffset = 0;
+
+	// button variables
+	private float button_height = 50;
+	private float border = 20;
+	private float button_width = 200;
+	private float gap = 40;
 
 
 	private ArrayList<Menu_Options> options = new ArrayList<>();
@@ -41,22 +48,34 @@ public class UI extends PApplet
 
 	public void settings()
 	{
-		load_menu_options();
-
-		// Use fullscreen instead of size to make your interface fullscreen
+		smooth(8);
 		fullScreen();
+		millis();
 	}
 
-	public void draw_rhombus()
+	public void draw_rhombus(int rx, int ry, int trans)
 	{
-		float length_1 = 180;
+		pushMatrix();
+		translate(rx, ry);
+		rotate(radians(trans));
+		float length = 180;
 		float side = 80;
 		double height = Math.sqrt(3) / 2 * side;
-		quad(0, 0, length_1, 0, length_1 + side / 2, (float) height, 0 - side / 2, (float) height);
+		fill(190);
+		noStroke();
+		quad(0, 0, length, 0, length + side / 2, (float) height, 0 - side / 2, (float) height);
+		popMatrix();
 	}
+
 
 	public void setup()
 	{
+		String[] fontList = PFont.list();
+		printArray(fontList);
+		PFont my_font = createFont("Rockwell", 32, true);
+		textFont(my_font);
+		load_menu_options();
+
 		// temp variables
 		bx = width / 2.0;
 		by = height / 2.0;
@@ -67,52 +86,26 @@ public class UI extends PApplet
 
 		background(130);
 
-		// first rhombus
-		pushMatrix();
-		translate(250, 300);
-
-		noStroke();
-		fill(190);
-		draw_rhombus();
-
-		popMatrix();
-
-		// second rhombus
-		pushMatrix();
-		translate(460, 135);
-		rotate(radians(120));
-
-		noStroke();
-		fill(190);
-		draw_rhombus();
-
-		popMatrix();
-
-		// third rhombus
-		pushMatrix();
-		translate(500, 400);
-		rotate(radians(240));
-
-		fill(190);
-		draw_rhombus();
-
-		popMatrix();
-
+		draw_rhombus(250, 300, 0);
+		draw_rhombus(460, 135, 120);
+		draw_rhombus(500, 400, 240);
 
 		// need to animate this
 		textSize(32);
 
-		text("Loading", 10, 30);
+		text("Loading Exit CO", 10, 30);
+		draw_menu_options();
+		AudioPlayer player;
+		Minim minim = new Minim(this);
+		player = minim.loadFile("music.mp3");
+		player.play();
 	}
 
-	// button variables
-	private float button_height = 50;
-	private float border = 20;
-	private float button_width = 200;
-	private float gap = 20;
 
 	private void draw_menu_options()
 	{
+		pushMatrix();
+		translate(400, 400);
 		for (int i = 0; i < options.size(); i++)
 		{
 			Menu_Options p = options.get(i);
@@ -123,9 +116,11 @@ public class UI extends PApplet
 			stroke(0);
 			rect(x, y, button_width, button_height);
 			textAlign(CENTER, CENTER);
-			fill(0);
+			fill(30);
+			textSize(32);
 			text(p.getName(), x + button_width * 0.5f, y + button_height * 0.5f);
 		}
+		popMatrix();
 	}
 
 	private void load_menu_options()
@@ -140,41 +135,40 @@ public class UI extends PApplet
 
 	public void draw()
 	{
-		int which = Integer.MIN_VALUE;
-
-		if (mouseX > bx - box_size && mouseX < bx + box_size &&
-				mouseY > by - box_size && mouseY < by + box_size)
-		{
-			overBox = true;
-			which = (int) ((mouseY - border) / (button_height + gap));
-
-			if (!locked)
-			{
-				stroke(255);
-				fill(153);
-			}
-		}
-		else
-		{
-			stroke(153);
-			fill(153);
-			overBox = false;
-		}
+//		int which = Integer.MIN_VALUE;
+//
+//		if (mouseX > bx - box_size && mouseX < bx + box_size &&
+//				mouseY > by - box_size && mouseY < by + box_size)
+//		{
+//			overBox = true;
+//			which = (int) ((mouseY - border) / (button_height + gap));
+//
+//			if (!locked)
+//			{
+//				stroke(255);
+//				fill(153);
+//			}
+//		}
+//		else
+//		{
+//			stroke(153);
+//			fill(153);
+//			overBox = false;
+//		}
 		// b.render();
 
-		System.out.println(options.get(which));
+//		System.out.println(options.get(which));
 
 //
 //		mc.update();
 //		mc.render();
-		background(127);
-		draw_menu_options();
+//		draw_menu_options();
 
 
-		if (checkKey(LEFT))
-		{
-			System.out.println("Left arrow key pressed");
-		}
+//		if (checkKey(LEFT))
+//		{
+//			System.out.println("Left arrow key pressed");
+//		}
 	}
 }
 
