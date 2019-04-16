@@ -50,7 +50,7 @@ class DNA
 	void update()
 	{
 		rotate_y = y + radians(ui.frameCount);
-		translate_x = 500;
+		translate_x = x + 100;
 		translate_y = 0;
 	}
 }

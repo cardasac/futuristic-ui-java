@@ -27,6 +27,11 @@ public class Loading_Text
 		counter = ui.millis() / 400;
 	}
 
+	public int return_timer()
+	{
+		return counter;
+	}
+
 	public Boolean check_finish()
 	{
 		return counter == message.length();

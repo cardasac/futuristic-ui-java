@@ -12,21 +12,15 @@ public class UI extends PApplet
 	private AudioPlayer player;
 	private Minim minim;
 
-	private ArrayList<DNA> dna = new ArrayList<>();
+	private ArrayList<DNA> dna1 = new ArrayList<>();
+	private ArrayList<DNA> dna2 = new ArrayList<>();
 	private ArrayList<Menu_Options> options = new ArrayList<>();
 	private Loading_Text loading_message;
+	private AbstergoLogo abstergoLogo;
 
 
 	String message1 = "Rome // Italy ";
 	String message2 = "2012-09-02 // 10:";
-
-	private double bx;
-	private double by;
-	private int box_size = 75;
-	boolean overBox = false;
-	boolean locked = false;
-	float xOffset = 0;
-	float yOffset = 0;
 
 	// button variables
 	private float button_height = 50;
@@ -38,21 +32,6 @@ public class UI extends PApplet
 	{
 		fullScreen(P3D);
 		smooth(8);
-		pixelDensity(2);
-	}
-
-	public void draw_rhombus(int rx, int ry, int trans)
-	{
-		pushMatrix();
-		translate(rx, ry);
-		rotate(radians(trans));
-		float length = 180;
-		float side = 80;
-		double height = Math.sqrt(3) / 2 * side;
-		fill(190);
-		noStroke();
-		quad(0, 0, length, 0, length + side / 2, (float) height, 0 - side / 2, (float) height);
-		popMatrix();
 	}
 
 	public void setup()
@@ -61,11 +40,6 @@ public class UI extends PApplet
 		textFont(my_font);
 		load_menu_options();
 
-		// temp variables
-		bx = width / 2.0;
-		by = height / 2.0;
-		rectMode(RADIUS);
-
 //		b = new Button(this, 50, 50, 100, 50, "I am a button");
 //		mc = new DNA(this, (float) width / 2, (float) height / 2, 50);
 
@@ -73,11 +47,18 @@ public class UI extends PApplet
 
 		for (int i = 0; i < 15; i++)
 		{
-			DNA s = new DNA(this, 400, 100 + i * 50, 50);
-			dna.add(s);
+			DNA s = new DNA(this, 100, 150 + i * 50, 50);
+			dna1.add(s);
+		}
+
+		for (int i = 0; i < 15; i++)
+		{
+			DNA s = new DNA(this, width - 300, 150 + i * 50, 50);
+			dna2.add(s);
 		}
 
 		loading_message = new Loading_Text(this, 300, 300, message1);
+		abstergoLogo = new AbstergoLogo(this);
 	}
 
 	// finished method
@@ -124,8 +105,8 @@ public class UI extends PApplet
 
 	private void draw_lines(int y)
 	{
-		int line_size = width / 3;
-		for (int i = 0; i < 6; i++)
+		int line_size = width / 5;
+		for (int i = 0; i < 5; i++)
 		{
 			if (i % 2 == 1)
 			{
@@ -143,43 +124,42 @@ public class UI extends PApplet
 		background(17, 66, 214);
 //		triangle(width / 2 - side/2, height / 2, width / 2, height / 2f - (sqrt(3) * (side / 2f)), width / 2 + side/2, height / 2);
 
-		draw_lines(height - 100);
-		draw_lines(100);
-
-		fill(255);
 
 //		camera(mouseX, mouseY, 1000, width / 2, height / 2, 0,
 //				0, 1, 0);
 
-//		if (m < 20)
-//		{
+		draw_lines(height - 100);
+		draw_lines(100);
 
+		int timer = 0;
 
+		timer = loading_message.return_timer();
 
 		if (!loading_message.check_finish())
 		{
 			loading_message.render();
 			loading_message.update();
+
 		}
+		else if (!abstergoLogo.check_finish(timer))
+		{
+			abstergoLogo.render();
+			abstergoLogo.update();
+		}
+
 		else
 		{
-
-			pushMatrix();
-			translate(width / 3.5f, height / 5);
-			draw_rhombus(250, 300, 0);
-			draw_rhombus(460, 135, 120);
-			draw_rhombus(500, 400, 240);
-			fill(240, millis() / 10 % 255);
-			textAlign(CENTER, CENTER);
-			text("LOADING", 400, 500);
-			popMatrix();
-
-			for (DNA value : dna)
+			for (DNA value : dna1)
 			{
 				value.render();
 				value.update();
 			}
 
+			for (DNA value : dna2)
+			{
+				value.render();
+				value.update();
+			}
 
 			draw_menu_options();
 		}
