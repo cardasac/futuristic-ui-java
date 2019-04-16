@@ -12,8 +12,8 @@ public class UI extends PApplet
 	private AudioPlayer player;
 	private Minim minim;
 
-	DNA dna;
-
+	private ArrayList<DNA> dna = new ArrayList<>();
+	private ArrayList<Menu_Options> options = new ArrayList<>();
 
 	private double bx;
 	private double by;
@@ -29,15 +29,11 @@ public class UI extends PApplet
 	private float button_width = 200;
 	private float gap = 40;
 
-	private ArrayList<Menu_Options> options = new ArrayList<>();
-
-	private Button b;
-	private DNA mc;
-
 	public void settings()
 	{
 		fullScreen(P3D);
 		smooth(8);
+		pixelDensity(2);
 	}
 
 	public void draw_rhombus(int rx, int ry, int trans)
@@ -56,7 +52,7 @@ public class UI extends PApplet
 
 	public void setup()
 	{
-		PFont my_font = createFont("Arial", 32, true);
+		PFont my_font = createFont("Arial", 64, true);
 		textFont(my_font);
 		load_menu_options();
 
@@ -70,9 +66,11 @@ public class UI extends PApplet
 
 		loadMusic();
 
-		dna = new DNA(this, 400, 400, 50);
-
-
+		for (int i = 0; i < 20; i++)
+		{
+			DNA s = new DNA(this, 400, 50 + i * 50, 50);
+			dna.add(s);
+		}
 	}
 
 	// finished method
@@ -145,26 +143,30 @@ public class UI extends PApplet
 //		camera(mouseX, mouseY, 1000, width / 2, height / 2, 0,
 //				0, 1, 0);
 
-		if (m < 20000)
-		{
-			pushMatrix();
-			translate(width / 3.5f, height / 5);
-			draw_rhombus(250, 300, 0);
-			draw_rhombus(460, 135, 120);
-			draw_rhombus(500, 400, 240);
-			fill(240, m / 6 % 255);
-			textSize(64);
-			textAlign(CENTER, CENTER);
-			text("LOADING", 400, 500);
-			popMatrix();
+//		if (m < 20000)
+//		{
+		pushMatrix();
+		translate(width / 3.5f, height / 5);
+		draw_rhombus(250, 300, 0);
+		draw_rhombus(460, 135, 120);
+		draw_rhombus(500, 400, 240);
+		fill(240, m / 6 % 255);
+		textAlign(CENTER, CENTER);
+		text("LOADING", 400, 500);
+		popMatrix();
 
-			dna.render();
-			dna.update();
-		}
-		else
+
+		for (int i = 0; i < dna.size(); i++)
 		{
-			draw_menu_options();
+			dna.get(i).render();
+			dna.get(i).update();
 		}
+
+//		}
+//		else
+//		{
+//			draw_menu_options();
+//		}
 	}
 
 	public void stop()
