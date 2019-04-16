@@ -14,6 +14,11 @@ public class UI extends PApplet
 
 	private ArrayList<DNA> dna = new ArrayList<>();
 	private ArrayList<Menu_Options> options = new ArrayList<>();
+	private Loading_Text loading_message;
+
+
+	String message1 = "Rome // Italy ";
+	String message2 = "2012-09-02 // 10:";
 
 	private double bx;
 	private double by;
@@ -66,11 +71,13 @@ public class UI extends PApplet
 
 		loadMusic();
 
-		for (int i = 0; i < 20; i++)
+		for (int i = 0; i < 15; i++)
 		{
-			DNA s = new DNA(this, 400, 50 + i * 50, 50);
+			DNA s = new DNA(this, 400, 100 + i * 50, 50);
 			dna.add(s);
 		}
+
+		loading_message = new Loading_Text(this, 300, 300, message1);
 	}
 
 	// finished method
@@ -124,16 +131,19 @@ public class UI extends PApplet
 			{
 				continue;
 			}
+			stroke(240);
 			line(i * width / 5, y, i * width / 5 + line_size, y);
 		}
 	}
+
+	int counter = 0;
 
 	public void draw()
 	{
 		background(17, 66, 214);
 //		triangle(width / 2 - side/2, height / 2, width / 2, height / 2f - (sqrt(3) * (side / 2f)), width / 2 + side/2, height / 2);
 
-		int m = millis();
+		int m = millis() / 1000;
 
 		draw_lines(height - 100);
 		draw_lines(100);
@@ -143,14 +153,14 @@ public class UI extends PApplet
 //		camera(mouseX, mouseY, 1000, width / 2, height / 2, 0,
 //				0, 1, 0);
 
-//		if (m < 20000)
+//		if (m < 20)
 //		{
 		pushMatrix();
 		translate(width / 3.5f, height / 5);
 		draw_rhombus(250, 300, 0);
 		draw_rhombus(460, 135, 120);
 		draw_rhombus(500, 400, 240);
-		fill(240, m / 6 % 255);
+		fill(240, millis() / 10 % 255);
 		textAlign(CENTER, CENTER);
 		text("LOADING", 400, 500);
 		popMatrix();
@@ -161,11 +171,16 @@ public class UI extends PApplet
 			dna.get(i).update();
 		}
 
-//		}
-//		else
-//		{
-//			draw_menu_options();
-//		}
+
+		if (m <= message1.length() - 1)
+		{
+			loading_message.render();
+			loading_message.update();
+		}
+		else
+		{
+			draw_menu_options();
+		}
 	}
 
 	public void stop()

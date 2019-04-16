@@ -1,13 +1,14 @@
-import processing.core.PApplet;
-
-public class Loading_Text extends PApplet
+public class Loading_Text
 {
-	String message = null;
-	float text_x = 0;
-	float text_y = 0;
+	private String message;
+	private float text_x;
+	private float text_y;
+	private UI ui;
+	private int counter;
 
-	Loading_Text(float x, float y, String message)
+	Loading_Text(UI ui, float x, float y, String message)
 	{
+		this.ui = ui;
 		this.text_x = x;
 		this.text_y = y;
 		this.message = message;
@@ -15,20 +16,16 @@ public class Loading_Text extends PApplet
 
 	public void render()
 	{
-		text(message, text_x, text_y);
+		ui.lights();
+		ui.fill(255,255);
+		ui.textAlign(ui.LEFT, ui.CENTER);
+		ui.text(message.substring(0, counter), text_x, text_y);
 	}
 
 	public void update()
 	{
-		float timer = 0;
-		while (timer != 30000)
-		{
-			for (int i = 0; i < 360; i++)
-			{
-				fill(0, 51);
-				text(message, text_x, text_y);
-			}
-			timer++;
-		}
+		counter = ui.millis() / 1000;
 	}
 }
+
+
