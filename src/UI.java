@@ -9,6 +9,9 @@ import processing.data.TableRow;
 
 public class UI extends PApplet
 {
+	private AudioPlayer player;
+	private Minim minim;
+
 	private double bx;
 	private double by;
 	private int box_size = 75;
@@ -23,34 +26,15 @@ public class UI extends PApplet
 	private float button_width = 200;
 	private float gap = 40;
 
-
 	private ArrayList<Menu_Options> options = new ArrayList<>();
 
 	private Button b;
 	private DNA mc;
 
-	private boolean[] keys = new boolean[1024];
-
-	public void keyPressed()
-	{
-		keys[keyCode] = true;
-	}
-
-	public void keyReleased()
-	{
-		keys[keyCode] = true;
-	}
-
-	private boolean checkKey(int c)
-	{
-		return keys[c] || keys[Character.toUpperCase(c)];
-	}
-
 	public void settings()
 	{
+		fullScreen(P3D);
 		smooth(8);
-		fullScreen();
-		millis();
 	}
 
 	public void draw_rhombus(int rx, int ry, int trans)
@@ -67,12 +51,9 @@ public class UI extends PApplet
 		popMatrix();
 	}
 
-
 	public void setup()
 	{
-		String[] fontList = PFont.list();
-		printArray(fontList);
-		PFont my_font = createFont("Rockwell", 32, true);
+		PFont my_font = createFont("Arial", 32, true);
 		textFont(my_font);
 		load_menu_options();
 
@@ -84,21 +65,17 @@ public class UI extends PApplet
 //		b = new Button(this, 50, 50, 100, 50, "I am a button");
 //		mc = new DNA(this, (float) width / 2, (float) height / 2, 50);
 
-		background(130);
+		loadMusic();
+	}
 
-		draw_rhombus(250, 300, 0);
-		draw_rhombus(460, 135, 120);
-		draw_rhombus(500, 400, 240);
+	// finished method
+	private void loadMusic()
+	{
+		minim = new Minim(this);
+		player = minim.loadFile("vr.mp3");
 
-		// need to animate this
-		textSize(32);
-
-		text("Loading Exit CO", 10, 30);
-		draw_menu_options();
-		AudioPlayer player;
-		Minim minim = new Minim(this);
-		player = minim.loadFile("music.mp3");
 		player.play();
+		player.loop();
 	}
 
 
@@ -133,42 +110,59 @@ public class UI extends PApplet
 		}
 	}
 
+	private void draw_lines(int y)
+	{
+		int line_size = width / 3;
+		for (int i = 0; i < 6; i++)
+		{
+			if (i % 2 == 1)
+			{
+				continue;
+			}
+			line(i * width / 5, y, i * width / 5 + line_size, y);
+		}
+	}
+
 	public void draw()
 	{
-//		int which = Integer.MIN_VALUE;
-//
-//		if (mouseX > bx - box_size && mouseX < bx + box_size &&
-//				mouseY > by - box_size && mouseY < by + box_size)
-//		{
-//			overBox = true;
-//			which = (int) ((mouseY - border) / (button_height + gap));
-//
-//			if (!locked)
-//			{
-//				stroke(255);
-//				fill(153);
-//			}
-//		}
-//		else
-//		{
-//			stroke(153);
-//			fill(153);
-//			overBox = false;
-//		}
-		// b.render();
+		background(17, 66, 214);
+//		triangle(width / 2 - side/2, height / 2, width / 2, height / 2f - (sqrt(3) * (side / 2f)), width / 2 + side/2, height / 2);
 
-//		System.out.println(options.get(which));
+		int m = millis();
 
-//
-//		mc.update();
-//		mc.render();
-//		draw_menu_options();
+		draw_lines(height - 100);
+		draw_lines(100);
 
+		fill(255);
 
-//		if (checkKey(LEFT))
-//		{
-//			System.out.println("Left arrow key pressed");
-//		}
+//		camera(mouseX, mouseY, 1000, width / 2, height / 2, 0,
+//				0, 1, 0);
+
+		if (m < 5000)
+		{
+			pushMatrix();
+			translate(width / 3.5f, height / 5);
+			draw_rhombus(250, 300, 0);
+			draw_rhombus(460, 135, 120);
+			draw_rhombus(500, 400, 240);
+			fill(240, m / 6 % 255);
+			textSize(64);
+			textAlign(CENTER, CENTER);
+			text("LOADING", 400, 500);
+			popMatrix();
+		}
+		else
+		{
+			draw_menu_options();
+		}
+	}
+
+	public void stop()
+	{
+		// always close Minim audio classes when you are done with them
+		player.close();
+		minim.stop();
+		super.stop();
 	}
 }
 
