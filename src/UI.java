@@ -155,7 +155,6 @@ public class UI extends PApplet
 		text("LOADING", 400, 500);
 		popMatrix();
 
-
 		for (int i = 0; i < dna.size(); i++)
 		{
 			dna.get(i).render();
