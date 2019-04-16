@@ -12,6 +12,9 @@ public class UI extends PApplet
 	private AudioPlayer player;
 	private Minim minim;
 
+	DNA dna;
+
+
 	private double bx;
 	private double by;
 	private int box_size = 75;
@@ -66,6 +69,10 @@ public class UI extends PApplet
 //		mc = new DNA(this, (float) width / 2, (float) height / 2, 50);
 
 		loadMusic();
+
+		dna = new DNA(this, 400, 400, 50);
+
+
 	}
 
 	// finished method
@@ -138,7 +145,7 @@ public class UI extends PApplet
 //		camera(mouseX, mouseY, 1000, width / 2, height / 2, 0,
 //				0, 1, 0);
 
-		if (m < 5000)
+		if (m < 20000)
 		{
 			pushMatrix();
 			translate(width / 3.5f, height / 5);
@@ -150,6 +157,9 @@ public class UI extends PApplet
 			textAlign(CENTER, CENTER);
 			text("LOADING", 400, 500);
 			popMatrix();
+
+			dna.render();
+			dna.update();
 		}
 		else
 		{

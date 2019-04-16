@@ -2,14 +2,15 @@ import processing.core.PApplet;
 
 class DNA
 {
-	private PApplet ui;
 	private float x;
 	private float dx = 1;
 	private float y;
 	private float diameter;
 	private float radius;
+	protected UI ui;
+	int timer;
 
-	DNA(PApplet ui, float x, float y, float diameter)
+	DNA(UI ui, float x, float y, float diameter)
 	{
 		this.ui = ui;
 		this.x = x;
@@ -20,22 +21,29 @@ class DNA
 
 	void render()
 	{
-		ui.stroke(255);
-		ui.noFill();
-		ui.ellipse(x, y, diameter, diameter);
-		ui.fill(255);
+//		ui.rotateY(ui.PI * timer / ui.width);
+		ui.translate(-50, -50, -1000);
+		ui.rotateY(PApplet.radians(timer/20));
 
-		// static field refers to all the classes
-		ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-		ui.text("I am a moving circle", x, y);
+		ui.noStroke();
+		ui.lights();
+		ui.translate(x, y, 0);
+		ui.sphere(radius);
+
+		ui.noStroke();
+		ui.lights();
+
+		ui.translate(50, 0, 0);
+		ui.box(150, radius / 5, radius / 5);
+
+		ui.noStroke();
+		ui.lights();
+		ui.translate(100, 0, 0);
+		ui.sphere(radius);
 	}
 
 	void update()
 	{
-		x += dx;
-		if ((x > ui.width - radius) || (x < radius))
-		{
-			dx *= -1;
-		}
+		timer = ui.millis();
 	}
 }
