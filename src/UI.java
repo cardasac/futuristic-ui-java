@@ -143,8 +143,6 @@ public class UI extends PApplet
 		background(17, 66, 214);
 //		triangle(width / 2 - side/2, height / 2, width / 2, height / 2f - (sqrt(3) * (side / 2f)), width / 2 + side/2, height / 2);
 
-		int m = millis() / 1000;
-
 		draw_lines(height - 100);
 		draw_lines(100);
 
@@ -155,30 +153,34 @@ public class UI extends PApplet
 
 //		if (m < 20)
 //		{
-		pushMatrix();
-		translate(width / 3.5f, height / 5);
-		draw_rhombus(250, 300, 0);
-		draw_rhombus(460, 135, 120);
-		draw_rhombus(500, 400, 240);
-		fill(240, millis() / 10 % 255);
-		textAlign(CENTER, CENTER);
-		text("LOADING", 400, 500);
-		popMatrix();
-
-		for (int i = 0; i < dna.size(); i++)
-		{
-			dna.get(i).render();
-			dna.get(i).update();
-		}
 
 
-		if (m <= message1.length() - 1)
+
+		if (!loading_message.check_finish())
 		{
 			loading_message.render();
 			loading_message.update();
 		}
 		else
 		{
+
+			pushMatrix();
+			translate(width / 3.5f, height / 5);
+			draw_rhombus(250, 300, 0);
+			draw_rhombus(460, 135, 120);
+			draw_rhombus(500, 400, 240);
+			fill(240, millis() / 10 % 255);
+			textAlign(CENTER, CENTER);
+			text("LOADING", 400, 500);
+			popMatrix();
+
+			for (DNA value : dna)
+			{
+				value.render();
+				value.update();
+			}
+
+
 			draw_menu_options();
 		}
 	}

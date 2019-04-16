@@ -17,14 +17,19 @@ public class Loading_Text
 	public void render()
 	{
 		ui.lights();
-		ui.fill(255,255);
+		ui.fill(255, 255);
 		ui.textAlign(ui.LEFT, ui.CENTER);
 		ui.text(message.substring(0, counter), text_x, text_y);
 	}
 
 	public void update()
 	{
-		counter = ui.millis() / 1000;
+		counter = ui.millis() / 400;
+	}
+
+	public Boolean check_finish()
+	{
+		return counter == message.length();
 	}
 }
 

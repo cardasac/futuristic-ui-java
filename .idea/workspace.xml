@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7868b423-a640-45a3-a43a-37e3f26710e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DNA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DNA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Loading_Text.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Loading_Text.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -18,22 +18,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/DNA.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+            <state relative-caret-position="428">
+              <caret line="177" column="37" selection-start-line="177" selection-start-column="37" selection-end-line="177" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#loadMusic#0;class#UI#0" />
+                <element signature="method#draw_menu_options#0;class#UI#0" />
+                <element signature="method#load_menu_options#0;class#UI#0" />
+                <element signature="method#draw_lines#0;class#UI#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/UI.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Loading_Text.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="156" selection-start-line="156" selection-end-line="156" />
+            <state relative-caret-position="510">
+              <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#462#463#0" expanded="true" />
+                <element signature="e#496#497#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -63,12 +71,12 @@
       <list>
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Menu_Options.java" />
-        <option value="$PROJECT_DIR$/src/Loading_Text.java" />
         <option value="$PROJECT_DIR$/src/BallInter.java" />
         <option value="$PROJECT_DIR$/src/Ball.java" />
         <option value="$PROJECT_DIR$/src/Try.java" />
-        <option value="$PROJECT_DIR$/src/UI.java" />
         <option value="$PROJECT_DIR$/src/DNA.java" />
+        <option value="$PROJECT_DIR$/src/UI.java" />
+        <option value="$PROJECT_DIR$/src/Loading_Text.java" />
       </list>
     </option>
   </component>
@@ -179,7 +187,7 @@
       <workItem from="1555176664024" duration="566000" />
       <workItem from="1555355951564" duration="16000" />
       <workItem from="1555435909627" duration="3034000" />
-      <workItem from="1555439505151" duration="5177000" />
+      <workItem from="1555439505151" duration="14612000" />
     </task>
     <task id="LOCAL-00001" summary="Add music libraries and add song for menu">
       <created>1555010547775</created>
@@ -216,11 +224,25 @@
       <option name="project" value="LOCAL" />
       <updated>1555444135389</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Reformat DNA code">
+      <created>1555444758100</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1555444758100</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add typewriter text">
+      <created>1555453475693</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1555453475693</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33184000" />
+    <option name="totallyTimeSpent" value="42619000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -244,7 +266,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32502708" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32932165" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32936078" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -257,7 +279,7 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19989339" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1673774" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -266,7 +288,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32932165" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32827735" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -299,7 +321,9 @@
     <MESSAGE value="Remove camera rotation due to mouse click problems" />
     <MESSAGE value="Add spiraling spheres" />
     <MESSAGE value="Create double helix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create double helix" />
+    <MESSAGE value="Reformat DNA code" />
+    <MESSAGE value="Add typewriter text" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add typewriter text" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/data/options.csv">
@@ -341,13 +365,6 @@
     <entry file="file://$PROJECT_DIR$/src/BallInter.java" />
     <entry file="file://$PROJECT_DIR$/src/Try.java" />
     <entry file="file://$PROJECT_DIR$/lib/Sound.java" />
-    <entry file="file://$PROJECT_DIR$/src/Loading_Text.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/core.jar!/processing/core/PApplet.class">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -358,20 +375,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/DNA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="10" selection-start-column="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/UI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="156" selection-start-line="156" selection-end-line="156" />
+        <state relative-caret-position="428">
+          <caret line="177" column="37" selection-start-line="177" selection-start-column="37" selection-end-line="177" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#loadMusic#0;class#UI#0" />
+            <element signature="method#draw_menu_options#0;class#UI#0" />
+            <element signature="method#load_menu_options#0;class#UI#0" />
+            <element signature="method#draw_lines#0;class#UI#0" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DNA.java">
+    <entry file="file://$PROJECT_DIR$/src/Loading_Text.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        <state relative-caret-position="510">
+          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+          <folding>
+            <element signature="e#462#463#0" expanded="true" />
+            <element signature="e#496#497#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
