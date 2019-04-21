@@ -10,7 +10,7 @@ public class AbstergoLogo
 		this.ui = ui;
 	}
 
-	public void draw_rhombus(int rx, int ry, int trans)
+	public void draw_trapezium(int rx, int ry, int trans)
 	{
 		ui.pushMatrix();
 		ui.translate(rx, ry);
@@ -28,9 +28,9 @@ public class AbstergoLogo
 	{
 		ui.pushMatrix();
 		ui.translate(ui.width / 3.5f, ui.height / 5);
-		draw_rhombus(250, 300, 0);
-		draw_rhombus(460, 135, 120);
-		draw_rhombus(500, 400, 240);
+		draw_trapezium(250, 300, 0);
+		draw_trapezium(460, 135, 120);
+		draw_trapezium(500, 400, 240);
 		ui.fill(240, ui.millis() / 10 % 255);
 		ui.textAlign(ui.CENTER, ui.CENTER);
 		ui.text("LOADING", 400, 500);
@@ -54,6 +54,6 @@ public class AbstergoLogo
 
 	public Boolean check_finish(int timer)
 	{
-		return counter == timer - 8;
+		return counter == timer - 4;
 	}
 }

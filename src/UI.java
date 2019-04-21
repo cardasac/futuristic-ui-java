@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 import ddf.minim.AudioPlayer;
 import ddf.minim.Minim;
 import processing.core.PApplet;
@@ -7,21 +5,20 @@ import processing.core.PFont;
 import processing.data.Table;
 import processing.data.TableRow;
 
+import java.util.ArrayList;
+
 public class UI extends PApplet
 {
+	String message1 = "Rome // Italy ";
+	String message2 = "2012-09-02 // 10:";
+	int counter = 0;
 	private AudioPlayer player;
 	private Minim minim;
-
 	private ArrayList<DNA> dna1 = new ArrayList<>();
 	private ArrayList<DNA> dna2 = new ArrayList<>();
 	private ArrayList<Menu_Options> options = new ArrayList<>();
 	private Loading_Text loading_message;
 	private AbstergoLogo abstergoLogo;
-
-
-	String message1 = "Rome // Italy ";
-	String message2 = "2012-09-02 // 10:";
-
 	// button variables
 	private float button_height = 50;
 	private float border = 20;
@@ -31,7 +28,8 @@ public class UI extends PApplet
 	public void settings()
 	{
 		fullScreen(P3D);
-		smooth(8);
+//		smooth(8);
+		pixelDensity(2);
 	}
 
 	public void setup()
@@ -70,7 +68,6 @@ public class UI extends PApplet
 		player.play();
 		player.loop();
 	}
-
 
 	private void draw_menu_options()
 	{
@@ -117,16 +114,14 @@ public class UI extends PApplet
 		}
 	}
 
-	int counter = 0;
-
 	public void draw()
 	{
 		background(17, 66, 214);
 //		triangle(width / 2 - side/2, height / 2, width / 2, height / 2f - (sqrt(3) * (side / 2f)), width / 2 + side/2, height / 2);
 
 
-//		camera(mouseX, mouseY, 1000, width / 2, height / 2, 0,
-//				0, 1, 0);
+		camera(mouseX, mouseY, 1000, width / 2, height / 2, 0,
+				0, 1, 0);
 
 		draw_lines(height - 100);
 		draw_lines(100);
@@ -160,6 +155,9 @@ public class UI extends PApplet
 				value.render();
 				value.update();
 			}
+			lights();
+			text(mouseX, 50, 50);
+			text(mouseY, 50, 100);
 
 			draw_menu_options();
 		}
