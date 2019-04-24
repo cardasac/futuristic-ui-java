@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7868b423-a640-45a3-a43a-37e3f26710e9" name="Default Changelist" comment="Add more libraries">
-      <change afterPath="$PROJECT_DIR$/src/MemoryLegend.java" afterDir="false" />
+    <list default="true" id="7868b423-a640-45a3-a43a-37e3f26710e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MemoryLegend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MemoryLegend.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,12 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MemoryLegend.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-              <folding>
-                <element signature="e#51#52#0" expanded="true" />
-                <element signature="e#70#71#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="285">
+              <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -218,7 +213,7 @@
       <workItem from="1555435909627" duration="3034000" />
       <workItem from="1555439505151" duration="17860000" />
       <workItem from="1555501085428" duration="1102000" />
-      <workItem from="1556109854167" duration="249000" />
+      <workItem from="1556109854167" duration="643000" />
     </task>
     <task id="LOCAL-00001" summary="Add music libraries and add song for menu">
       <created>1555010547775</created>
@@ -276,11 +271,18 @@
       <option name="project" value="LOCAL" />
       <updated>1555454377040</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Create MemoryLegend class">
+      <created>1556110136084</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1556110136084</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47218000" />
+    <option name="totallyTimeSpent" value="47612000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -362,7 +364,8 @@
     <MESSAGE value="Reformat DNA code" />
     <MESSAGE value="Add typewriter text" />
     <MESSAGE value="Implement checkFinish function for typewriter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement checkFinish function for typewriter" />
+    <MESSAGE value="Create MemoryLegend class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create MemoryLegend class" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/data/options.csv">
@@ -449,12 +452,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MemoryLegend.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-          <folding>
-            <element signature="e#51#52#0" expanded="true" />
-            <element signature="e#70#71#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="285">
+          <caret line="19" column="41" selection-start-line="19" selection-start-column="41" selection-end-line="19" selection-end-column="41" />
         </state>
       </provider>
     </entry>
