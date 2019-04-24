@@ -11,7 +11,6 @@ public class UI extends PApplet
 {
 	String message1 = "Rome // Italy ";
 	String message2 = "2012-09-02 // 10:";
-	int counter = 0;
 	private AudioPlayer player;
 	private Minim minim;
 	private ArrayList<DNA> dna1 = new ArrayList<>();
@@ -19,6 +18,7 @@ public class UI extends PApplet
 	private ArrayList<Menu_Options> options = new ArrayList<>();
 	private Loading_Text loading_message;
 	private AbstergoLogo abstergoLogo;
+
 	// button variables
 	private float button_height = 50;
 	private float border = 20;
