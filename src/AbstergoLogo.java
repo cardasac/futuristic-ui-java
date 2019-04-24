@@ -54,6 +54,6 @@ public class AbstergoLogo
 
 	public Boolean check_finish(int timer)
 	{
-		return counter == timer - 4;
+		return counter == timer - 8;
 	}
 }

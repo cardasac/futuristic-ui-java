@@ -18,6 +18,8 @@ public class UI extends PApplet
 	private ArrayList<Menu_Options> options = new ArrayList<>();
 	private Loading_Text loading_message;
 	private AbstergoLogo abstergoLogo;
+	private MemoryLegend memoryLegend1;
+	private MemoryLegend memoryLegend2;
 
 	// button variables
 	private float button_height = 50;
@@ -29,7 +31,7 @@ public class UI extends PApplet
 	{
 		fullScreen(P3D);
 //		smooth(8);
-		pixelDensity(2);
+//		pixelDensity(2);
 	}
 
 	public void setup()
@@ -57,6 +59,8 @@ public class UI extends PApplet
 
 		loading_message = new Loading_Text(this, 300, 300, message1);
 		abstergoLogo = new AbstergoLogo(this);
+		memoryLegend1 = new MemoryLegend(this, 600, 200, 255, true);
+		memoryLegend2 = new MemoryLegend(this, 600, 200, 0, false);
 	}
 
 	// finished method
@@ -102,7 +106,7 @@ public class UI extends PApplet
 
 	private void draw_lines(int y)
 	{
-		int line_size = width / 5;
+		int line_size = width / 3;
 		for (int i = 0; i < 5; i++)
 		{
 			if (i % 2 == 1)
@@ -144,6 +148,9 @@ public class UI extends PApplet
 
 		else
 		{
+			memoryLegend1.render();
+			memoryLegend2.render();
+
 			for (DNA value : dna1)
 			{
 				value.render();
