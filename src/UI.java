@@ -22,11 +22,6 @@ public class UI extends PApplet
 	private AbstergoLogo abstergoLogo;
 	private MemoryLegend memoryLegend1;
 	private MemoryLegend memoryLegend2;
-	// button variables
-	private float button_height = 50;
-	private float border = 20;
-	private float button_width = 200;
-	private float gap = 40;
 
 	public void settings()
 	{
@@ -80,23 +75,20 @@ public class UI extends PApplet
 
 	private void draw_menu_options()
 	{
-		pushMatrix();
-		translate(400, 400);
+		float ratio = width / 15f;
+		float rectWidth = ratio * (11 / 3f);
+		float rectHeight = height / 6;
 		for (int i = 0; i < options.size(); i++)
 		{
 			Menu_Options p = options.get(i);
-
-			float y = border + (i * (button_height + gap));
-			float x = border;
 			noFill();
 			stroke(255);
-			rect(x, y, button_width, button_height);
+			rect(ratio + (ratio + rectWidth) * i, height - height / 3, rectWidth, rectHeight);
 			textAlign(CENTER, CENTER);
 			fill(255);
 			textSize(32);
-			text(p.getName(), x + button_width * 0.5f, y + button_height * 0.5f);
+			text(p.getName(), ratio + (ratio + rectWidth) * i + rectWidth / 2, height - height / 3f + rectHeight / 2);
 		}
-		popMatrix();
 	}
 
 	private void load_menu_options()

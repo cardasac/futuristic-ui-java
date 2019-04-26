@@ -56,6 +56,6 @@ public class AbstergoLogo implements Loading
 
 	public Boolean check_finish(int timer)
 	{
-		return counter == timer + 4;
+		return counter == timer + 1;
 	}
 }
