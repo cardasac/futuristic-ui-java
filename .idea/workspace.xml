@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7868b423-a640-45a3-a43a-37e3f26710e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Loading.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstergoLogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstergoLogo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Loading_Text.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Loading_Text.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -20,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="141" selection-start-line="141" selection-end-line="141" />
+            <state relative-caret-position="483">
+              <caret line="136" column="28" selection-start-line="136" selection-start-column="28" selection-end-line="136" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#loadMusic#0;class#UI#0" />
@@ -36,10 +33,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Loading.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Loading_Text.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
+            <state relative-caret-position="120">
+              <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
               <folding>
                 <element signature="e#462#463#0" expanded="true" />
                 <element signature="e#503#504#0" expanded="true" />
@@ -52,20 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Loading.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AbstergoLogo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="41" selection-start-line="41" selection-end-line="59" selection-end-column="5" />
+            <state relative-caret-position="423">
+              <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
               <folding>
                 <element signature="e#859#860#0" expanded="true" />
                 <element signature="e#877#878#0" expanded="true" />
@@ -111,9 +108,10 @@
         <option value="$PROJECT_DIR$/src/DNA.java" />
         <option value="$PROJECT_DIR$/src/MemoryLegend.java" />
         <option value="$PROJECT_DIR$/src/Loading_Text.java" />
-        <option value="$PROJECT_DIR$/src/UI.java" />
         <option value="$PROJECT_DIR$/src/AbstergoLogo.java" />
         <option value="$PROJECT_DIR$/src/Loading.java" />
+        <option value="$PROJECT_DIR$/src/Color.java" />
+        <option value="$PROJECT_DIR$/src/UI.java" />
       </list>
     </option>
   </component>
@@ -143,11 +141,6 @@
             <path>
               <item name="AC_UI" type="b2602c69:ProjectViewProjectNode" />
               <item name="AC_UI" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AC_UI" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AC_UI" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -165,21 +158,21 @@
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\calex\OneDrive\Documents\GitHub\AC_UI\data" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib" />
       <recent name="C:\Users\calex\OneDrive\Documents\GitHub\AC_UI\lib" />
       <recent name="C:\Users\calex\OneDrive\Documents\GitHub\AC_UI\data" />
       <recent name="C:\Users\calex\OneDrive\Documents\GitHub\AC_UI" />
       <recent name="C:\Users\calex\OneDrive\Documents\GitHub\AC_UI\src" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\calex\OneDrive\Documents\GitHub\AC_UI\data" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -232,7 +225,7 @@
       <workItem from="1555439505151" duration="17860000" />
       <workItem from="1555501085428" duration="1102000" />
       <workItem from="1556109854167" duration="3305000" />
-      <workItem from="1556274057534" duration="8985000" />
+      <workItem from="1556274057534" duration="11477000" />
     </task>
     <task id="LOCAL-00001" summary="Add music libraries and add song for menu">
       <created>1555010547775</created>
@@ -325,11 +318,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556279193759</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Add Loading Interface and optimise timed events">
+      <created>1556283435988</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1556283435988</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59259000" />
+    <option name="totallyTimeSpent" value="61751000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -344,13 +344,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32771084" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32771084" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32502708" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32409638" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32932165" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32936078" />
@@ -400,6 +400,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/AC_UI" />
@@ -416,7 +442,8 @@
     <MESSAGE value="Finalise render method for MemoryLegend class" />
     <MESSAGE value="Fix draw_lines method with mathematical formula to display as grid" />
     <MESSAGE value="Re-define AbstergoLogo, include more maths for less code and now position is easy to change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Re-define AbstergoLogo, include more maths for less code and now position is easy to change" />
+    <MESSAGE value="Add Loading Interface and optimise timed events" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Loading Interface and optimise timed events" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/data/options.csv">
@@ -471,23 +498,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/UI.java">
+    <entry file="file://$PROJECT_DIR$/src/Color.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="141" selection-start-line="141" selection-end-line="141" />
+        <state relative-caret-position="60">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#loadMusic#0;class#UI#0" />
-            <element signature="method#draw_menu_options#0;class#UI#0" />
-            <element signature="method#load_menu_options#0;class#UI#0" />
+            <element signature="e#121#122#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/core.jar!/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/export.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/core.jar!/icon/icon-16.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Loading_Text.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
+        <state relative-caret-position="120">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
           <folding>
             <element signature="e#462#463#0" expanded="true" />
             <element signature="e#503#504#0" expanded="true" />
@@ -501,8 +534,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AbstergoLogo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="41" selection-start-line="41" selection-end-line="59" selection-end-column="5" />
+        <state relative-caret-position="423">
+          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
           <folding>
             <element signature="e#859#860#0" expanded="true" />
             <element signature="e#877#878#0" expanded="true" />
@@ -518,8 +551,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Loading.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/UI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="136" column="28" selection-start-line="136" selection-start-column="28" selection-end-line="136" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#loadMusic#0;class#UI#0" />
+            <element signature="method#draw_menu_options#0;class#UI#0" />
+            <element signature="method#load_menu_options#0;class#UI#0" />
+          </folding>
         </state>
       </provider>
     </entry>

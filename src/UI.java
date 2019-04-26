@@ -18,7 +18,7 @@ public class UI extends PApplet
 	private ArrayList<DNA> dna1 = new ArrayList<>();
 	private ArrayList<DNA> dna2 = new ArrayList<>();
 	private ArrayList<Menu_Options> options = new ArrayList<>();
-	private Loading_Text loading_message1;
+	private Loading_Text loading_message;
 	private AbstergoLogo abstergoLogo;
 	private MemoryLegend memoryLegend1;
 	private MemoryLegend memoryLegend2;
@@ -60,7 +60,7 @@ public class UI extends PApplet
 		String strDate = dateFormat.format(date);
 
 		String message1 = "D" + strDate + " ";
-		loading_message1 = new Loading_Text(this, width / 8, height / 2, message1);
+		loading_message = new Loading_Text(this, width / 8, height / 2, message1);
 		abstergoLogo = new AbstergoLogo(this, width / 2, height / 2);
 
 		PVector al = new PVector(600, 200);
@@ -124,18 +124,19 @@ public class UI extends PApplet
 	{
 		int side = 30;
 		background(37, 84, 199);
-//		triangle(width / 2 - side / 2, height / 2, width / 2, height / 2f - (sqrt(3) * (side / 2f)), width / 2 + side / 2, height / 2);
 
+//		triangle(width / 2 - side / 2, height / 2, width / 2, height / 2f - (sqrt(3) * (side / 2f)), width / 2 + side / 2, height / 2);
 		draw_lines(height - height / 7);
 		draw_lines(height / 7);
+
 		int timer;
-		timer = loading_message1.return_timer();
+		timer = loading_message.return_timer();
 
 
-		if (!loading_message1.check_finish())
+		if (!loading_message.check_finish())
 		{
-			loading_message1.render();
-			loading_message1.update();
+			loading_message.render();
+			loading_message.update();
 		}
 		else if (!abstergoLogo.check_finish(timer))
 		{
