@@ -2,6 +2,7 @@ import ddf.minim.AudioPlayer;
 import ddf.minim.Minim;
 import processing.core.PApplet;
 import processing.core.PFont;
+import processing.core.PVector;
 import processing.data.Table;
 import processing.data.TableRow;
 
@@ -21,7 +22,6 @@ public class UI extends PApplet
 	private AbstergoLogo abstergoLogo;
 	private MemoryLegend memoryLegend1;
 	private MemoryLegend memoryLegend2;
-
 	// button variables
 	private float button_height = 50;
 	private float border = 20;
@@ -40,9 +40,6 @@ public class UI extends PApplet
 		PFont my_font = createFont("Arial", 64, true);
 		textFont(my_font);
 		load_menu_options();
-
-//		b = new Button(this, 50, 50, 100, 50, "I am a button");
-//		mc = new DNA(this, (float) width / 2, (float) height / 2, 50);
 
 		loadMusic();
 
@@ -64,9 +61,11 @@ public class UI extends PApplet
 
 		String message1 = "D" + strDate + " ";
 		loading_message1 = new Loading_Text(this, 300, 300, message1);
-		abstergoLogo = new AbstergoLogo(this);
-		memoryLegend1 = new MemoryLegend(this, 600, 200, 255, true);
-		memoryLegend2 = new MemoryLegend(this, 600, 200, 0, false);
+		abstergoLogo = new AbstergoLogo(this, width / 2, height / 2);
+
+		PVector al = new PVector(600, 200);
+		memoryLegend1 = new MemoryLegend(this, al, 255, true);
+		memoryLegend2 = new MemoryLegend(this, al, 0, false);
 	}
 
 	// finished method
@@ -123,11 +122,12 @@ public class UI extends PApplet
 
 	public void draw()
 	{
+		int side = 30;
 		background(17, 66, 214);
-//		triangle(width / 2 - side/2, height / 2, width / 2, height / 2f - (sqrt(3) * (side / 2f)), width / 2 + side/2, height / 2);
+//		triangle(width / 2 - side / 2, height / 2, width / 2, height / 2f - (sqrt(3) * (side / 2f)), width / 2 + side / 2, height / 2);
 
-		draw_lines(height - 100);
-		draw_lines(100);
+		draw_lines(height - height / 7);
+		draw_lines(height / 7);
 
 		int timer;
 

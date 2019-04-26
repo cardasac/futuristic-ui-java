@@ -1,3 +1,5 @@
+import processing.core.PVector;
+
 public class MemoryLegend
 {
 	private UI ui;
@@ -7,11 +9,11 @@ public class MemoryLegend
 	private boolean inverted;
 
 
-	MemoryLegend(UI ui, float coordinateX, float coordinateY, float colourMemory, boolean inverted)
+	MemoryLegend(UI ui, PVector al, float colourMemory, boolean inverted)
 	{
 		this.ui = ui;
-		this.coordinateX = coordinateX;
-		this.coordinateY = coordinateY;
+		this.coordinateX = al.x;
+		this.coordinateY = al.y;
 		this.colourMemory = colourMemory;
 		this.inverted = inverted;
 	}

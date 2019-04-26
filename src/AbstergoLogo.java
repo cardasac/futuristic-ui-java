@@ -4,19 +4,24 @@ public class AbstergoLogo
 {
 	private UI ui;
 	private int counter;
+	private float coordinateX;
+	private float coordinateY;
 
-	AbstergoLogo(UI ui)
+	AbstergoLogo(UI ui, float x, float y)
 	{
 		this.ui = ui;
+		this.coordinateX = x;
+		this.coordinateY = y;
 	}
 
-	public void draw_trapezium(int rx, int ry, int trans)
+	public void draw_trapezium(int trans)
 	{
 		ui.pushMatrix();
-		ui.translate(rx, ry);
+		ui.translate(coordinateX, coordinateY);
 		ui.rotate(PApplet.radians(trans));
-		float length = 180;
-		float side = 80;
+		ui.translate(-160, 20);
+		float length = ui.width / 7;
+		float side = ui.height / 9;
 		double height = Math.sqrt(3) / 2 * side;
 		ui.fill(190);
 		ui.noStroke();
@@ -26,15 +31,12 @@ public class AbstergoLogo
 
 	public void draw_logo()
 	{
-		ui.pushMatrix();
-		ui.translate(ui.width / 4f, ui.height / 5);
-		draw_trapezium(250, 300, 0);
-		draw_trapezium(460, 135, 120);
-		draw_trapezium(500, 400, 240);
+		draw_trapezium(0);
+		draw_trapezium(120);
+		draw_trapezium(240);
 		ui.fill(240, ui.millis() / 10 % 255);
 		ui.textAlign(ui.CENTER, ui.CENTER);
-		ui.text("LOADING", 400, 500);
-		ui.popMatrix();
+		ui.text("LOADING", coordinateX, ui.height - ui.height / 5);
 	}
 
 	public void render()
@@ -54,6 +56,6 @@ public class AbstergoLogo
 
 	public Boolean check_finish(int timer)
 	{
-		return counter == timer - 4;
+		return counter == timer - 10;
 	}
 }
