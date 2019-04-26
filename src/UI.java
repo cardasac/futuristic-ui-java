@@ -60,7 +60,7 @@ public class UI extends PApplet
 		String strDate = dateFormat.format(date);
 
 		String message1 = "D" + strDate + " ";
-		loading_message1 = new Loading_Text(this, 300, 300, message1);
+		loading_message1 = new Loading_Text(this, width / 8, height / 2, message1);
 		abstergoLogo = new AbstergoLogo(this, width / 2, height / 2);
 
 		PVector al = new PVector(600, 200);
@@ -113,7 +113,7 @@ public class UI extends PApplet
 	{
 		float ratio = width / 10;
 		float line_size = ratio * (8 / 3f);
-		stroke(240);
+		stroke(255);
 		for (int i = 0; i < 3; i++)
 		{
 			line((line_size + ratio) * i, y, line_size * (i + 1) + ratio * (i), y);
@@ -123,15 +123,14 @@ public class UI extends PApplet
 	public void draw()
 	{
 		int side = 30;
-		background(17, 66, 214);
+		background(37, 84, 199);
 //		triangle(width / 2 - side / 2, height / 2, width / 2, height / 2f - (sqrt(3) * (side / 2f)), width / 2 + side / 2, height / 2);
 
 		draw_lines(height - height / 7);
 		draw_lines(height / 7);
-
 		int timer;
-
 		timer = loading_message1.return_timer();
+
 
 		if (!loading_message1.check_finish())
 		{
@@ -143,7 +142,6 @@ public class UI extends PApplet
 			abstergoLogo.render();
 			abstergoLogo.update();
 		}
-
 		else
 		{
 			memoryLegend1.render();

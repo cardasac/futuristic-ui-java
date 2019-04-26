@@ -29,7 +29,7 @@ public class Loading_Text
 
 	public int return_timer()
 	{
-		return counter;
+		return counter * 400 / 1000;
 	}
 
 	public Boolean check_finish()

@@ -1,6 +1,6 @@
 import processing.core.PApplet;
 
-public class AbstergoLogo
+public class AbstergoLogo implements Loading
 {
 	private UI ui;
 	private int counter;
@@ -23,7 +23,7 @@ public class AbstergoLogo
 		float length = ui.width / 7;
 		float side = ui.height / 9;
 		double height = Math.sqrt(3) / 2 * side;
-		ui.fill(190);
+		ui.fill(255);
 		ui.noStroke();
 		ui.quad(0, 0, length, 0, length + side / 2, (float) height, 0 - side / 2, (float) height);
 		ui.popMatrix();
@@ -34,7 +34,7 @@ public class AbstergoLogo
 		draw_trapezium(0);
 		draw_trapezium(120);
 		draw_trapezium(240);
-		ui.fill(240, ui.millis() / 10 % 255);
+		ui.fill(255, ui.millis() / 10 % 255);
 		ui.textAlign(ui.CENTER, ui.CENTER);
 		ui.text("LOADING", coordinateX, ui.height - ui.height / 5);
 	}
@@ -51,11 +51,11 @@ public class AbstergoLogo
 
 	public int return_timer()
 	{
-		return 10;
+		return counter;
 	}
 
 	public Boolean check_finish(int timer)
 	{
-		return counter == timer - 10;
+		return counter == timer + 4;
 	}
 }
