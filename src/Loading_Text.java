@@ -16,8 +16,7 @@ public class Loading_Text
 
 	public void render()
 	{
-		ui.lights();
-		ui.fill(255, 255);
+		ui.fill(255);
 		ui.textAlign(ui.LEFT, ui.CENTER);
 		ui.text(message.substring(0, counter), text_x, text_y);
 	}

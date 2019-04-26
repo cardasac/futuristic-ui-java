@@ -89,10 +89,10 @@ public class UI extends PApplet
 			float y = border + (i * (button_height + gap));
 			float x = border;
 			noFill();
-			stroke(0);
+			stroke(255);
 			rect(x, y, button_width, button_height);
 			textAlign(CENTER, CENTER);
-			fill(30);
+			fill(255);
 			textSize(32);
 			text(p.getName(), x + button_width * 0.5f, y + button_height * 0.5f);
 		}

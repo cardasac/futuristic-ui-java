@@ -27,21 +27,18 @@ class DNA
 		ui.translate(-translate_x, translate_y);
 
 		ui.noStroke();
-		ui.lights();
 		ui.translate(x, y);
-		ui.fill(240);
+		ui.fill(255);
 		ui.sphere(radius);
 
 		ui.noStroke();
-		ui.lights();
-		ui.fill(240);
+		ui.fill(255);
 		ui.translate(100, 0);
 		ui.box(150, radius / 5, radius / 5);
 
 		ui.noStroke();
-		ui.lights();
 		ui.translate(100, 0);
-		ui.fill(240);
+		ui.fill(255);
 		ui.sphere(radius);
 
 		ui.popMatrix();
