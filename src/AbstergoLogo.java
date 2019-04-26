@@ -27,7 +27,7 @@ public class AbstergoLogo
 	public void draw_logo()
 	{
 		ui.pushMatrix();
-		ui.translate(ui.width / 3.5f, ui.height / 5);
+		ui.translate(ui.width / 4f, ui.height / 5);
 		draw_trapezium(250, 300, 0);
 		draw_trapezium(460, 135, 120);
 		draw_trapezium(500, 400, 240);
@@ -54,6 +54,6 @@ public class AbstergoLogo
 
 	public Boolean check_finish(int timer)
 	{
-		return counter == timer - 8;
+		return counter == timer - 4;
 	}
 }

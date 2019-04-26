@@ -5,18 +5,19 @@ import processing.core.PFont;
 import processing.data.Table;
 import processing.data.TableRow;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class UI extends PApplet
 {
-	String message1 = "Rome // Italy ";
-	String message2 = "2012-09-02 // 10:";
 	private AudioPlayer player;
 	private Minim minim;
 	private ArrayList<DNA> dna1 = new ArrayList<>();
 	private ArrayList<DNA> dna2 = new ArrayList<>();
 	private ArrayList<Menu_Options> options = new ArrayList<>();
-	private Loading_Text loading_message;
+	private Loading_Text loading_message1;
 	private AbstergoLogo abstergoLogo;
 	private MemoryLegend memoryLegend1;
 	private MemoryLegend memoryLegend2;
@@ -29,9 +30,9 @@ public class UI extends PApplet
 
 	public void settings()
 	{
-		fullScreen(P3D);
+		size(1280, 720, P3D);
 //		smooth(8);
-//		pixelDensity(2);
+		pixelDensity(displayDensity());
 	}
 
 	public void setup()
@@ -45,19 +46,24 @@ public class UI extends PApplet
 
 		loadMusic();
 
-		for (int i = 0; i < 15; i++)
+		for (int i = 0; i < 10; i++)
 		{
 			DNA s = new DNA(this, 100, 150 + i * 50, 50);
 			dna1.add(s);
 		}
 
-		for (int i = 0; i < 15; i++)
+		for (int i = 0; i < 10; i++)
 		{
 			DNA s = new DNA(this, width - 300, 150 + i * 50, 50);
 			dna2.add(s);
 		}
 
-		loading_message = new Loading_Text(this, 300, 300, message1);
+		DateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
+		Date date = new Date();
+		String strDate = dateFormat.format(date);
+
+		String message1 = "D" + strDate + " ";
+		loading_message1 = new Loading_Text(this, 300, 300, message1);
 		abstergoLogo = new AbstergoLogo(this);
 		memoryLegend1 = new MemoryLegend(this, 600, 200, 255, true);
 		memoryLegend2 = new MemoryLegend(this, 600, 200, 0, false);
@@ -106,15 +112,12 @@ public class UI extends PApplet
 
 	private void draw_lines(int y)
 	{
-		int line_size = width / 3;
-		for (int i = 0; i < 5; i++)
+		float ratio = width / 10;
+		float line_size = ratio * (8 / 3f);
+		stroke(240);
+		for (int i = 0; i < 3; i++)
 		{
-			if (i % 2 == 1)
-			{
-				continue;
-			}
-			stroke(240);
-			line(i * width / 5, y, i * width / 5 + line_size, y);
+			line((line_size + ratio) * i, y, line_size * (i + 1) + ratio * (i), y);
 		}
 	}
 
@@ -123,22 +126,17 @@ public class UI extends PApplet
 		background(17, 66, 214);
 //		triangle(width / 2 - side/2, height / 2, width / 2, height / 2f - (sqrt(3) * (side / 2f)), width / 2 + side/2, height / 2);
 
-
-		camera(mouseX, mouseY, 1000, width / 2, height / 2, 0,
-				0, 1, 0);
-
 		draw_lines(height - 100);
 		draw_lines(100);
 
-		int timer = 0;
+		int timer;
 
-		timer = loading_message.return_timer();
+		timer = loading_message1.return_timer();
 
-		if (!loading_message.check_finish())
+		if (!loading_message1.check_finish())
 		{
-			loading_message.render();
-			loading_message.update();
-
+			loading_message1.render();
+			loading_message1.update();
 		}
 		else if (!abstergoLogo.check_finish(timer))
 		{
