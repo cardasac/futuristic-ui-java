@@ -112,14 +112,26 @@ public class UI extends PApplet
 		}
 	}
 
+	private void draw_sequence()
+	{
+		int lineSize = 5;
+		float placement1 = height / 2.8f;
+		float placement2 = height - height / 2.8f;
+		for (int i = 0; i < width; i += width / 100)
+		{
+			line(i, placement1, i, placement1 + lineSize);
+			line(i, placement2, i, placement2 + lineSize);
+		}
+	}
+
 	public void draw()
 	{
 		int side = 30;
 		background(37, 84, 199);
 
 //		triangle(width / 2 - side / 2, height / 2, width / 2, height / 2f - (sqrt(3) * (side / 2f)), width / 2 + side / 2, height / 2);
-		draw_lines(height - height / 7);
-		draw_lines(height / 7);
+		draw_lines(height - height / 9);
+		draw_lines(height / 9);
 
 		int timer;
 		timer = loading_message.return_timer();
@@ -137,6 +149,7 @@ public class UI extends PApplet
 		}
 		else
 		{
+			draw_sequence();
 			memoryLegend1.render();
 			memoryLegend2.render();
 

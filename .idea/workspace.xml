@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7868b423-a640-45a3-a43a-37e3f26710e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/options.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/options.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstergoLogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstergoLogo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -19,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="81" column="9" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
+            <state relative-caret-position="244">
+              <caret line="133" column="29" selection-start-line="133" selection-start-column="29" selection-end-line="133" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#loadMusic#0;class#UI#0" />
@@ -33,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/data/options.csv">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DNA.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+            <state relative-caret-position="330">
+              <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -85,8 +83,8 @@
         <option value="$PROJECT_DIR$/src/Loading_Text.java" />
         <option value="$PROJECT_DIR$/src/DNA.java" />
         <option value="$PROJECT_DIR$/src/AbstergoLogo.java" />
-        <option value="$PROJECT_DIR$/src/UI.java" />
         <option value="$PROJECT_DIR$/data/options.csv" />
+        <option value="$PROJECT_DIR$/src/UI.java" />
       </list>
     </option>
   </component>
@@ -200,7 +198,7 @@
       <workItem from="1555439505151" duration="17860000" />
       <workItem from="1555501085428" duration="1102000" />
       <workItem from="1556109854167" duration="3305000" />
-      <workItem from="1556274057534" duration="14233000" />
+      <workItem from="1556274057534" duration="14888000" />
     </task>
     <task id="LOCAL-00001" summary="Add music libraries and add song for menu">
       <created>1555010547775</created>
@@ -314,17 +312,24 @@
       <option name="project" value="LOCAL" />
       <updated>1556286821072</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Correct button layout and insert text in centre">
+      <created>1556289550469</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1556289550469</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64507000" />
+    <option name="totallyTimeSpent" value="65162000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17381974" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20028612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -333,7 +338,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32771084" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32771084" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -434,7 +439,8 @@
     <MESSAGE value="Add Loading Interface and optimise timed events" />
     <MESSAGE value="Remove unwanted variables" />
     <MESSAGE value="Change colours and remove lights" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change colours and remove lights" />
+    <MESSAGE value="Correct button layout and insert text in centre" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correct button layout and insert text in centre" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/util/Objects.java" />
@@ -513,10 +519,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DNA.java">
+    <entry file="file://$PROJECT_DIR$/src/Button.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        <state relative-caret-position="285">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -527,29 +533,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Button.java">
+    <entry file="file://$PROJECT_DIR$/data/options.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        <state relative-caret-position="45">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DNA.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="81" column="9" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
+        <state relative-caret-position="244">
+          <caret line="133" column="29" selection-start-line="133" selection-start-column="29" selection-end-line="133" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#loadMusic#0;class#UI#0" />
             <element signature="method#load_menu_options#0;class#UI#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/options.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
         </state>
       </provider>
     </entry>
