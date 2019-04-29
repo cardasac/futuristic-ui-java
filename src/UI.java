@@ -26,8 +26,8 @@ public class UI extends PApplet
 
 	public void settings()
 	{
-//		size(1280, 720, P3D);
-		size(1600, 900, P3D);
+		size(1280, 720, P3D);
+//		size(1600, 900, P3D);
 //		smooth(8);
 		pixelDensity(displayDensity());
 	}
@@ -56,7 +56,7 @@ public class UI extends PApplet
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		String strDate = dateFormat.format(new Date());
 
-		String message = "Dublin // Ireland " + strDate + " ";
+		String message = "" + strDate + " ";
 		loading_message = new Loading_Text(this, width / 8, height / 2, message);
 		abstergoLogo = new AbstergoLogo(this, width / 2, height / 2);
 
@@ -161,9 +161,11 @@ public class UI extends PApplet
 				value.render();
 				value.update();
 			}
-			lights();
-			text(mouseX, 50, 50);
-			text(mouseY, 50, 100);
+
+			textAlign(CENTER, BOTTOM);
+			text(mouseX, width / 20, height / 9);
+			textAlign(CENTER, BOTTOM);
+			text(mouseY, width / 10, height / 9);
 
 			draw_menu_options();
 		}

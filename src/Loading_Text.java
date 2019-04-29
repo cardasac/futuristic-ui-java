@@ -1,4 +1,4 @@
-public class Loading_Text
+ class Loading_Text
 {
 	private String message;
 	private float text_x;
@@ -14,19 +14,19 @@ public class Loading_Text
 		this.message = message;
 	}
 
-	public void render()
+	 void render()
 	{
 		ui.fill(255);
 		ui.textAlign(ui.LEFT, ui.CENTER);
 		ui.text(message.substring(0, counter), text_x, text_y);
 	}
 
-	public void update()
+	 void update()
 	{
 		counter = ui.millis() / 400;
 	}
 
-	public int return_timer()
+	 int return_timer()
 	{
 		return counter * 400 / 1000;
 	}

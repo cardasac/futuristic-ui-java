@@ -1,6 +1,6 @@
 import processing.core.PVector;
 
-public class MemoryLegend
+class MemoryLegend
 {
 	private UI ui;
 	private float coordinateX;
@@ -19,9 +19,9 @@ public class MemoryLegend
 
 	void render()
 	{
-		float circleSize = 40;
-		float rectHeight = 60;
-		float rectWidth = 15;
+		float circleSize = ui.width / 36;
+		float rectHeight = ui.height / 15;
+		float rectWidth = ui.width / 85;
 
 		if (inverted)
 		{
@@ -31,6 +31,8 @@ public class MemoryLegend
 			ui.noStroke();
 			ui.fill(colourMemory);
 			ui.rect(coordinateX, coordinateY, rectWidth, -rectHeight);
+			ui.textAlign(ui.CENTER, ui.BOTTOM);
+			ui.text("Complete Memory", coordinateX + ui.width / 15f, coordinateY);
 		}
 		else
 		{
@@ -40,8 +42,9 @@ public class MemoryLegend
 			ui.noStroke();
 			ui.fill(colourMemory);
 			ui.rect(coordinateX, coordinateY, rectWidth, rectHeight);
+			ui.textAlign(ui.CENTER, ui.TOP);
+			ui.text("Incomplete Memory", coordinateX + ui.width / 15f, coordinateY);
 		}
-
 	}
 
 	void update()
