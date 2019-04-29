@@ -52,20 +52,17 @@ public class UI extends PApplet
 
 		for (int i = 0; i < 10; i++)
 		{
-			DNA s = new DNA(this, width / 12f + i * 50, height / 2.25f, 20, 255);
-			dna1.add(s);
-		}
+			DNA s1 = new DNA(this, width / 12f + i * 50, height / 2.25f, 20, 255);
+			dna1.add(s1);
 
-		for (int i = 0; i < 10; i++)
-		{
-			DNA s = new DNA(this, width - width / 12f - i * 50, height / 2.25f, 20, 0);
-			dna2.add(s);
+			DNA s2 = new DNA(this, width - width / 12f - i * 50, height / 2.25f, 20, 0);
+			dna2.add(s2);
 		}
 
 		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		String strDate = dateFormat.format(new Date());
 
-		String message = "" + strDate + " ";
+		String message = "Dublin // Ireland " + strDate + " ";
 		loading_message = new LoadingText(this, width / 8, height / 2, message);
 		abstergoLogo = new AbstergoLogo(this, width / 2, height / 2);
 
@@ -265,7 +262,6 @@ public class UI extends PApplet
 		fill(255);
 		textAlign(LEFT, BOTTOM);
 		text("Abstergo Industries", width / 30, height / 9);
-
 
 		DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 		String currentTime = dateFormat.format(new Date());
