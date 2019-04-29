@@ -8,7 +8,6 @@ public class MemoryLegend
 	private float colourMemory;
 	private boolean inverted;
 
-
 	MemoryLegend(UI ui, PVector al, float colourMemory, boolean inverted)
 	{
 		this.ui = ui;

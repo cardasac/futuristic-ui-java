@@ -19,13 +19,13 @@ public class AbstergoLogo implements Loading
 		ui.pushMatrix();
 		ui.translate(coordinateX, coordinateY);
 		ui.rotate(PApplet.radians(trans));
-		ui.translate(-160, 20);
+		ui.translate(-ui.width / 8, ui.height / 36);
 		float length = ui.width / 7;
 		float side = ui.height / 9;
 		double height = Math.sqrt(3) / 2 * side;
 		ui.fill(255);
 		ui.noStroke();
-		ui.quad(0, 0, length, 0, length + side / 2, (float) height, 0 - side / 2, (float) height);
+		ui.quad(0, 0, length, 0, length + side / 2, (float) height, -side / 2, (float) height);
 		ui.popMatrix();
 	}
 
@@ -56,6 +56,6 @@ public class AbstergoLogo implements Loading
 
 	public Boolean check_finish(int timer)
 	{
-		return counter == timer + 1;
+		return counter == timer + 4;
 	}
 }

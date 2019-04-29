@@ -1,4 +1,4 @@
-public class Button
+class Button
 {
 	private UI ui;
 	private float x;
@@ -29,12 +29,12 @@ public class Button
 
 		ui.fill(255);
 		ui.textAlign(ui.CENTER, ui.CENTER);
-		ui.textSize(32);
+		ui.textSize(ui.width / 50);
 		ui.text(text1, textPlacement, ui.height - ui.height / 3f + rectHeight / 2);
 
 		ui.fill(255);
 		ui.textAlign(ui.CENTER, ui.CENTER);
-		ui.textSize(16);
+		ui.textSize(ui.width / 100);
 		ui.text(text2, textPlacement, ui.height - ui.height / 3.5f + rectHeight / 2);
 	}
 }

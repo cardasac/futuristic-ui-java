@@ -26,14 +26,15 @@ public class UI extends PApplet
 
 	public void settings()
 	{
-		size(1280, 720, P3D);
+//		size(1280, 720, P3D);
+		size(1600, 900, P3D);
 //		smooth(8);
 		pixelDensity(displayDensity());
 	}
 
 	public void setup()
 	{
-		PFont my_font = createFont("Arial", 64, true);
+		PFont my_font = createFont("Arial", width / 25, true);
 		textFont(my_font);
 		load_menu_options();
 		set_menu_options();
@@ -52,27 +53,16 @@ public class UI extends PApplet
 			dna2.add(s);
 		}
 
-		DateFormat dateFormat = new SimpleDateFormat("dd/mm/yyyy");
-		Date date = new Date();
-		String strDate = dateFormat.format(date);
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		String strDate = dateFormat.format(new Date());
 
-		String message1 = "D" + strDate + " ";
-		loading_message = new Loading_Text(this, width / 8, height / 2, message1);
+		String message = "Dublin // Ireland " + strDate + " ";
+		loading_message = new Loading_Text(this, width / 8, height / 2, message);
 		abstergoLogo = new AbstergoLogo(this, width / 2, height / 2);
 
-		PVector al = new PVector(600, 200);
+		PVector al = new PVector(width - width / 4, height / 9);
 		memoryLegend1 = new MemoryLegend(this, al, 255, true);
 		memoryLegend2 = new MemoryLegend(this, al, 0, false);
-	}
-
-	// finished method
-	private void loadMusic()
-	{
-		minim = new Minim(this);
-		player = minim.loadFile("vr.mp3");
-
-		player.play();
-		player.loop();
 	}
 
 	private void load_menu_options()
@@ -177,6 +167,16 @@ public class UI extends PApplet
 
 			draw_menu_options();
 		}
+	}
+
+	// finished method
+	private void loadMusic()
+	{
+		minim = new Minim(this);
+		player = minim.loadFile("vr.mp3");
+
+		player.play();
+		player.loop();
 	}
 
 	public void stop()

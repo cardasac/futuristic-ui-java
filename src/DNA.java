@@ -2,10 +2,10 @@ import static processing.core.PApplet.radians;
 
 class DNA
 {
+	private UI ui;
 	private float x;
 	private float y;
 	private float radius;
-	private UI ui;
 	private float translate_x;
 	private float translate_y;
 	private float rotate_y;
