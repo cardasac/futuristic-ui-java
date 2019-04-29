@@ -1,17 +1,17 @@
 import processing.data.TableRow;
 
-public class Menu_Options
+public class MenuOptions
 {
 	private String name;
 	private String description;
 
-	public Menu_Options(String name, String description)
+	private MenuOptions(String name, String description)
 	{
 		this.name = name;
 		this.description = description;
 	}
 
-	public Menu_Options(TableRow tr)
+	MenuOptions(TableRow tr)
 	{
 		// Constructor chaining
 		this(tr.getString("Title"), tr.getString("Description"));
@@ -22,7 +22,7 @@ public class Menu_Options
 		return name + "\t" + description;
 	}
 
-	public String getName()
+	String getName()
 	{
 		return name;
 	}
@@ -32,7 +32,7 @@ public class Menu_Options
 		this.name = name;
 	}
 
-	public String getDescription()
+	String getDescription()
 	{
 		return description;
 	}

@@ -1,11 +1,8 @@
 import processing.core.PApplet;
 
-public class AbstergoLogo implements Loading
+public class AbstergoLogo extends UIElement implements Loading
 {
-	private UI ui;
 	private int counter;
-	private float coordinateX;
-	private float coordinateY;
 
 	AbstergoLogo(UI ui, float x, float y)
 	{
@@ -35,6 +32,7 @@ public class AbstergoLogo implements Loading
 		draw_trapezium(120);
 		draw_trapezium(240);
 		ui.fill(255, ui.millis() / 10 % 255);
+		ui.textSize(ui.width / 20);
 		ui.textAlign(ui.CENTER, ui.CENTER);
 		ui.text("LOADING", coordinateX, ui.height - ui.height / 5);
 	}

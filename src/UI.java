@@ -13,12 +13,14 @@ import java.util.Date;
 
 public class UI extends PApplet
 {
+	private static final int FADE = 250;
+
 	private AudioPlayer player;
 	private Minim minim;
 	private ArrayList<DNA> dna1 = new ArrayList<>();
 	private ArrayList<DNA> dna2 = new ArrayList<>();
-	private ArrayList<Menu_Options> options = new ArrayList<>();
-	private Loading_Text loading_message;
+	private ArrayList<MenuOptions> options = new ArrayList<>();
+	private LoadingText loading_message;
 	private AbstergoLogo abstergoLogo;
 	private MemoryLegend memoryLegend1;
 	private MemoryLegend memoryLegend2;
@@ -59,7 +61,7 @@ public class UI extends PApplet
 		String strDate = dateFormat.format(new Date());
 
 		String message = "" + strDate + " ";
-		loading_message = new Loading_Text(this, width / 8, height / 2, message);
+		loading_message = new LoadingText(this, width / 8, height / 2, message);
 		abstergoLogo = new AbstergoLogo(this, width / 2, height / 2);
 
 		PVector al = new PVector(width - width / 4, height / 9);
@@ -72,7 +74,7 @@ public class UI extends PApplet
 		Table table = loadTable("options.csv", "header");
 		for (TableRow tr : table.rows())
 		{
-			Menu_Options p = new Menu_Options(tr);
+			MenuOptions p = new MenuOptions(tr);
 			options.add(p);
 		}
 	}
@@ -86,7 +88,7 @@ public class UI extends PApplet
 		{
 			float textPlacement = ratio + (ratio + rectWidth) * i + rectWidth / 2;
 			float ratioFormula = ratio + (ratio + rectWidth) * i;
-			Menu_Options p = options.get(i);
+			MenuOptions p = options.get(i);
 			Button but = new Button(this, ratioFormula, height - height / 3, rectWidth, rectHeight, textPlacement, p.getName(), p.getDescription());
 			buttonList.add(but);
 		}
@@ -104,9 +106,10 @@ public class UI extends PApplet
 	{
 		float ratio = width / 10;
 		float line_size = ratio * (8 / 3f);
-		stroke(255);
+
 		for (int i = 0; i < 3; i++)
 		{
+			stroke(255);
 			line((line_size + ratio) * i, y, line_size * (i + 1) + ratio * (i), y);
 		}
 	}
@@ -127,14 +130,13 @@ public class UI extends PApplet
 
 	public void mouseClicked()
 	{
-
 		if (abstergoLogo.check_finish(timer))
 		{
 			for (Button b : buttonList)
 			{
 				if (mouseX >= b.getX() && mouseX <= b.getX() + b.getRectWidth() && mouseY >= b.getY() && mouseY <= b.getY() + b.getRectHeight())
 				{
-					which = buttonList.indexOf(b);
+					which = buttonList.indexOf(b) + 1;
 				}
 			}
 		}
@@ -142,6 +144,13 @@ public class UI extends PApplet
 
 	private void overButton()
 	{
+		textAlign(CENTER, BOTTOM);
+		textSize(width / 80);
+		text(mouseX, width / 20, height / 9);
+		textAlign(CENTER, BOTTOM);
+		textSize(width / 80);
+		text(mouseY, width / 10, height / 9);
+
 		if (abstergoLogo.check_finish(timer))
 		{
 			for (Button b : buttonList)
@@ -159,17 +168,22 @@ public class UI extends PApplet
 
 	public void draw()
 	{
-//		int side = 30;
 		background(37, 84, 199);
 
 //		triangle(width / 2 - side / 2, height / 2, width / 2, height / 2f - (sqrt(3) * (side / 2f)), width / 2 + side / 2, height / 2);
 		draw_lines(height - height / 9);
 		draw_lines(height / 9);
+		fill(255);
+		textSize(width / 80);
+		float map1 = map(player.getGain(), 0, -45, 100, 0);
+		text(map1, 200, 200);
+		stroke(0);
+		fill(255);
+		rect(0, 30, map1, 50);
 
 		timer = loading_message.return_timer();
 
-
-		if (!loading_message.check_finish())
+		if (!loading_message.check_finish(timer))
 		{
 			loading_message.render();
 			loading_message.update();
@@ -198,25 +212,31 @@ public class UI extends PApplet
 				value.update();
 			}
 
-			textAlign(CENTER, BOTTOM);
-			textSize(width / 80);
-			text(mouseX, width / 20, height / 9);
-			textAlign(CENTER, BOTTOM);
-			textSize(width / 80);
-			text(mouseY, width / 10, height / 9);
-
 			draw_menu_options();
 
 			switch (which)
 			{
 				case 0:
-					break;
+					draw_menu_options();
 
+					break;
 				case 1:
+					if (player.getGain() < 0)
+					{
+						player.shiftGain(player.getGain(), player.getGain() + 5, FADE);
+						which = 0;
+					}
 					break;
-
 				case 2:
-					exit();
+					if (player.getGain() > -45)
+					{
+						player.shiftGain(player.getGain(), player.getGain() - 5, FADE);
+						which = 0;
+					}
+					break;
+				case 3:
+					player.setGain(0);
+//					exit();
 				default:
 					break;
 			}
@@ -228,6 +248,7 @@ public class UI extends PApplet
 	{
 		minim = new Minim(this);
 		player = minim.loadFile("vr.mp3");
+		player.setGain(0);
 
 		player.play();
 		player.loop();

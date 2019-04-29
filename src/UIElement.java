@@ -1,16 +1,10 @@
 abstract class UIElement
 {
 	UI ui;
-	float x;
-	float y;
+	float coordinateX;
+	float coordinateY;
 
-	void render()
-	{
+	abstract void render();
 
-	}
-
-	void update()
-	{
-
-	}
+	abstract void update();
 }

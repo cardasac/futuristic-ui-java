@@ -1,10 +1,7 @@
 import processing.core.PVector;
 
-class MemoryLegend
+class MemoryLegend extends UIElement
 {
-	private UI ui;
-	private float coordinateX;
-	private float coordinateY;
 	private float colourMemory;
 	private boolean inverted;
 
@@ -53,5 +50,4 @@ class MemoryLegend
 	{
 
 	}
-
 }
