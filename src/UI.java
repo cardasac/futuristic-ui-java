@@ -13,6 +13,7 @@ import java.util.Date;
 
 public class UI extends PApplet
 {
+	private static final int FADE = 250;
 	private AudioPlayer player;
 	private Minim minim;
 	private ArrayList<DNA> dna1 = new ArrayList<>();
@@ -31,7 +32,7 @@ public class UI extends PApplet
 		size(1280, 720, P3D);
 //		size(1600, 900, P3D);
 //		smooth(8);
-		pixelDensity(displayDensity());
+//		pixelDensity(displayDensity());
 	}
 
 	public void setup()
@@ -174,22 +175,44 @@ public class UI extends PApplet
 
 	private void volumeButtons()
 	{
+		float rectWidth = width / 10;
+		float rectHeight = height / 15;
 		noStroke();
 		fill(255);
 		rect(height / 2, width / 2, 50, 50);
 
-//		if (player.getGain() < 0)
-//		{
-//			player.shiftGain(player.getGain(), player.getGain() + 5, FADE);
-////			which = 0;
-//		}
-//
-//		if (player.getGain() > -45)
-//		{
-//			player.shiftGain(player.getGain(), player.getGain() - 5, FADE);
-////			which = 0;
-//		}
-//		text("+", rectHeight / 2, rectWidth / 2);
+		float map1 = map(player.getGain(), 0, -45, rectWidth, 0);
+
+		stroke(0);
+		noFill();
+		rect(width / 2f - rectWidth / 2f, height / 2f - rectHeight / 2f, rectWidth, rectHeight);
+
+		stroke(0);
+		fill(255);
+		rect(width / 2f - rectWidth / 2f, height / 2f - rectHeight / 2f, map1, rectHeight);
+
+		textSize(width / 20);
+		fill(255);
+		textAlign(CENTER, CENTER);
+		text("+", width / 2f + rectWidth, height / 2f - rectHeight / 5f);
+
+		textSize(width / 20);
+		fill(255);
+		textAlign(CENTER, CENTER);
+		text("-", width / 2f - rectWidth, height / 2f - rectHeight / 5f);
+
+		if (player.getGain() < 0)
+		{
+			player.shiftGain(player.getGain(), player.getGain() + 5, FADE);
+//			which = 0;
+		}
+
+		if (player.getGain() > -45)
+		{
+			player.shiftGain(player.getGain(), player.getGain() - 5, FADE);
+//			which = 0;
+		}
+		text("+", rectHeight / 2, rectWidth / 2);
 	}
 
 	public void draw()
@@ -200,15 +223,6 @@ public class UI extends PApplet
 		drawLines(height - height / 9);
 		drawLines(height / 9);
 
-		float map1 = map(player.getGain(), 0, -45, 100, 0);
-
-		stroke(0);
-		noFill();
-		rect(0, 30, 100, 50);
-
-		stroke(0);
-		fill(255);
-		rect(0, 30, map1, 50);
 
 		timer = loading_message.return_timer();
 
