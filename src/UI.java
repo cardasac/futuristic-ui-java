@@ -26,7 +26,7 @@ public class UI extends PApplet
 	private MemoryLegend memoryLegend2;
 	private ArrayList<Button> buttonList = new ArrayList<>();
 	private int timer;
-	private int which;
+	private int which = 0;
 
 	public void settings()
 	{
@@ -47,13 +47,13 @@ public class UI extends PApplet
 
 		for (int i = 0; i < 10; i++)
 		{
-			DNA s = new DNA(this, 100 + i * 50, height / 2.25f, 20);
+			DNA s = new DNA(this, 100 + i * 50, height / 2.25f, 20, 255);
 			dna1.add(s);
 		}
 
 		for (int i = 0; i < 10; i++)
 		{
-			DNA s = new DNA(this, width - 100 - i * 50, height / 2.25f, 20);
+			DNA s = new DNA(this, width - 100 - i * 50, height / 2.25f, 20, 0);
 			dna2.add(s);
 		}
 
@@ -136,7 +136,7 @@ public class UI extends PApplet
 			{
 				if (mouseX >= b.getX() && mouseX <= b.getX() + b.getRectWidth() && mouseY >= b.getY() && mouseY <= b.getY() + b.getRectHeight())
 				{
-					which = buttonList.indexOf(b) + 1;
+					which = buttonList.indexOf(b);
 				}
 			}
 		}
@@ -157,6 +157,41 @@ public class UI extends PApplet
 				}
 			}
 		}
+	}
+
+	public void mainMenu()
+	{
+		for (DNA value : dna1)
+		{
+			value.render();
+			value.update();
+		}
+
+		for (DNA value : dna2)
+		{
+			value.render();
+			value.update();
+		}
+	}
+
+	public void volumeButtons()
+	{
+		noStroke();
+		fill(255);
+		rect(height / 2, width / 2, 50, 50);
+
+//		if (player.getGain() < 0)
+//		{
+//			player.shiftGain(player.getGain(), player.getGain() + 5, FADE);
+////			which = 0;
+//		}
+//
+//		if (player.getGain() > -45)
+//		{
+//			player.shiftGain(player.getGain(), player.getGain() - 5, FADE);
+////			which = 0;
+//		}
+//		text("+", rectHeight / 2, rectWidth / 2);
 	}
 
 	public void draw()
@@ -196,39 +231,20 @@ public class UI extends PApplet
 			memoryLegend1.render();
 			memoryLegend2.render();
 			drawMenuOptions();
+			text(which, 10, 10);
 
 			switch (which)
 			{
-				case 0:
-					for (DNA value : dna1)
-					{
-						value.render();
-						value.update();
-					}
 
-					for (DNA value : dna2)
-					{
-						value.render();
-						value.update();
-					}
+				case 0:
+					mainMenu();
 					break;
 				case 1:
-					if (player.getGain() < 0)
-					{
-						player.shiftGain(player.getGain(), player.getGain() + 5, FADE);
-						which = 0;
-					}
+					volumeButtons();
 					break;
 				case 2:
-					if (player.getGain() > -45)
-					{
-						player.shiftGain(player.getGain(), player.getGain() - 5, FADE);
-						which = 0;
-					}
-					break;
-				case 3:
-					player.setGain(0);
-//					exit();
+//					player.setGain(0);
+					exit();
 				default:
 					break;
 			}

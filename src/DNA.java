@@ -7,14 +7,17 @@ class DNA extends UIElement
 	private float translate_y;
 	private float rotate_x;
 	private float translateAll;
+	private float color;
 
-	DNA(UI ui, float x, float y, float size)
+	DNA(UI ui, float x, float y, float size, float color)
 	{
 		this.ui = ui;
 		this.coordinateX = x;
 		this.coordinateY = y;
+		this.color = color;
 		radius = size / 2;
 		translateAll = ui.height / 20;
+
 	}
 
 	void render()
@@ -27,17 +30,17 @@ class DNA extends UIElement
 
 		ui.noStroke();
 		ui.translate(coordinateX, coordinateY);
-		ui.fill(255);
+		ui.fill(color);
 		ui.sphere(radius);
 
 		ui.noStroke();
-		ui.fill(255);
+		ui.fill(color);
 		ui.translate(0, translateAll);
 		ui.box(radius / 5, ui.height / 9, radius / 5);
 
 		ui.noStroke();
 		ui.translate(0, translateAll);
-		ui.fill(255);
+		ui.fill(color);
 		ui.sphere(radius);
 
 		ui.popMatrix();
