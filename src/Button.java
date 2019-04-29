@@ -1,30 +1,40 @@
-import processing.core.PApplet;
-
 public class Button
 {
-	private PApplet ui;
+	private UI ui;
 	private float x;
 	private float y;
-	private float width;
-	private float height;
-	private String text;
+	private float rectWidth;
+	private float rectHeight;
+	private String text1;
+	private String text2;
+	private float textPlacement;
 
-	Button(PApplet ui, float x, float y, float width, float height, String text)
+	Button(UI ui, float x, float y, float rectWidth, float rectHeight, float textPlacement, String text1, String text2)
 	{
 		this.ui = ui;
 		this.x = x;
 		this.y = y;
-		this.width = width;
-		this.height = height;
-		this.text = text;
+		this.rectWidth = rectWidth;
+		this.rectHeight = rectHeight;
+		this.textPlacement = textPlacement;
+		this.text1 = text1;
+		this.text2 = text2;
 	}
 
 	void render()
 	{
 		ui.noFill();
 		ui.stroke(255);
-		ui.rect(x, y, width, height);
-		ui.textAlign(PApplet.CENTER, PApplet.CENTER);
-		ui.text(text, x + width * 0.5f, y + height * 0.5f);
+		ui.rect(x, y, rectWidth, rectHeight);
+
+		ui.fill(255);
+		ui.textAlign(ui.CENTER, ui.CENTER);
+		ui.textSize(32);
+		ui.text(text1, textPlacement, ui.height - ui.height / 3f + rectHeight / 2);
+
+		ui.fill(255);
+		ui.textAlign(ui.CENTER, ui.CENTER);
+		ui.textSize(16);
+		ui.text(text2, textPlacement, ui.height - ui.height / 3.5f + rectHeight / 2);
 	}
 }

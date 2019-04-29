@@ -22,6 +22,7 @@ public class UI extends PApplet
 	private AbstergoLogo abstergoLogo;
 	private MemoryLegend memoryLegend1;
 	private MemoryLegend memoryLegend2;
+	private ArrayList<Button> buttonList = new ArrayList<>();
 
 	public void settings()
 	{
@@ -35,6 +36,7 @@ public class UI extends PApplet
 		PFont my_font = createFont("Arial", 64, true);
 		textFont(my_font);
 		load_menu_options();
+		set_menu_options();
 
 		loadMusic();
 
@@ -73,24 +75,6 @@ public class UI extends PApplet
 		player.loop();
 	}
 
-	private void draw_menu_options()
-	{
-		float ratio = width / 15f;
-		float rectWidth = ratio * (11 / 3f);
-		float rectHeight = height / 6;
-		for (int i = 0; i < options.size(); i++)
-		{
-			Menu_Options p = options.get(i);
-			noFill();
-			stroke(255);
-			rect(ratio + (ratio + rectWidth) * i, height - height / 3, rectWidth, rectHeight);
-			textAlign(CENTER, CENTER);
-			fill(255);
-			textSize(32);
-			text(p.getName(), ratio + (ratio + rectWidth) * i + rectWidth / 2, height - height / 3f + rectHeight / 2);
-		}
-	}
-
 	private void load_menu_options()
 	{
 		Table table = loadTable("options.csv", "header");
@@ -98,6 +82,29 @@ public class UI extends PApplet
 		{
 			Menu_Options p = new Menu_Options(tr);
 			options.add(p);
+		}
+	}
+
+	private void set_menu_options()
+	{
+		float ratio = width / 15f;
+		float rectWidth = ratio * (11 / 3f);
+		float rectHeight = height / 6;
+		for (int i = 0; i < options.size(); i++)
+		{
+			float textPlacement = ratio + (ratio + rectWidth) * i + rectWidth / 2;
+			float ratioFormula = ratio + (ratio + rectWidth) * i;
+			Menu_Options p = options.get(i);
+			Button but = new Button(this, ratioFormula, height - height / 3, rectWidth, rectHeight, textPlacement, p.getName(), p.getDescription());
+			buttonList.add(but);
+		}
+	}
+
+	private void draw_menu_options()
+	{
+		for (Button button : buttonList)
+		{
+			button.render();
 		}
 	}
 
