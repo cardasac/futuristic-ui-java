@@ -187,9 +187,9 @@ public class UI extends PApplet
 			{
 				if (mouseX >= b.getX() && mouseX <= b.getX() + b.getRectWidth() && mouseY >= b.getY() && mouseY <= b.getY() + b.getRectHeight())
 				{
-					stroke(255, millis() / 10 % 255);
+					stroke(255, millis() / 3 % 255);
 					line(b.getX() - width / 25f, b.getY(), b.getX() - width / 25f, b.getY() + b.getRectHeight());
-					stroke(255, millis() / 10 % 255);
+					stroke(255, millis() / 3 % 255);
 					line(b.getX() + width / 25f + b.getRectWidth(), b.getY(), b.getX() + width / 25f + b.getRectWidth(), b.getY() + b.getRectHeight());
 				}
 			}
@@ -260,6 +260,20 @@ public class UI extends PApplet
 		drawLines(height - height / 9);
 		drawLines(height / 9);
 
+		textSize(width / 40);
+		fill(255);
+		textAlign(LEFT, BOTTOM);
+		text("Abstergo Industries", width / 30, height / 9);
+
+
+		DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+		String currentTime = dateFormat.format(new Date());
+
+		textSize(width / 40);
+		fill(255);
+		textAlign(CENTER, BOTTOM);
+		text(currentTime, width / 2, height / 9);
+
 
 		timer = loading_message.return_timer();
 
@@ -284,7 +298,6 @@ public class UI extends PApplet
 
 			switch (which)
 			{
-
 				case 0:
 					mainMenu();
 					break;
@@ -293,7 +306,6 @@ public class UI extends PApplet
 					drawOptions();
 					break;
 				case 2:
-//					player.setGain(0);
 					exit();
 				default:
 					break;
