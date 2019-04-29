@@ -21,6 +21,46 @@ class Button
 		this.text2 = text2;
 	}
 
+	public float getX()
+	{
+		return x;
+	}
+
+	public void setX(float x)
+	{
+		this.x = x;
+	}
+
+	public float getY()
+	{
+		return y;
+	}
+
+	public void setY(float y)
+	{
+		this.y = y;
+	}
+
+	public float getRectWidth()
+	{
+		return rectWidth;
+	}
+
+	public void setRectWidth(float rectWidth)
+	{
+		this.rectWidth = rectWidth;
+	}
+
+	public float getRectHeight()
+	{
+		return rectHeight;
+	}
+
+	public void setRectHeight(float rectHeight)
+	{
+		this.rectHeight = rectHeight;
+	}
+
 	void render()
 	{
 		ui.noFill();

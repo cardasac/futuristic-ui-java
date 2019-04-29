@@ -13,6 +13,7 @@ import java.util.Date;
 
 public class UI extends PApplet
 {
+	ArrayList<PVector> square = new ArrayList<PVector>();
 	private AudioPlayer player;
 	private Minim minim;
 	private ArrayList<DNA> dna1 = new ArrayList<>();
@@ -23,6 +24,8 @@ public class UI extends PApplet
 	private MemoryLegend memoryLegend1;
 	private MemoryLegend memoryLegend2;
 	private ArrayList<Button> buttonList = new ArrayList<>();
+	private int timer;
+	private int which;
 
 	public void settings()
 	{
@@ -121,6 +124,36 @@ public class UI extends PApplet
 		}
 	}
 
+	public void mouseClicked()
+	{
+
+		if (abstergoLogo.check_finish(timer))
+		{
+			for (Button b : buttonList)
+			{
+				if (mouseX >= b.getX() && mouseX <= b.getX() + b.getRectWidth() && mouseY >= b.getY() && mouseY <= b.getY() + b.getRectHeight())
+				{
+					which = buttonList.indexOf(b);
+				}
+			}
+		}
+	}
+
+	public void overButton()
+	{
+		if (abstergoLogo.check_finish(timer))
+		{
+			for (Button b : buttonList)
+			{
+				if (mouseX >= b.getX() && mouseX <= b.getX() + b.getRectWidth() && mouseY >= b.getY() && mouseY <= b.getY() + b.getRectHeight())
+				{
+					line(b.getX() - width / 25f, b.getY(), b.getX() - width / 25f, b.getY() + b.getRectHeight());
+					line(b.getX() + width / 25f + b.getRectWidth(), b.getY(), b.getX() + width / 25f + b.getRectWidth(), b.getY() + b.getRectHeight());
+				}
+			}
+		}
+	}
+
 	public void draw()
 	{
 //		int side = 30;
@@ -130,7 +163,6 @@ public class UI extends PApplet
 		draw_lines(height - height / 9);
 		draw_lines(height / 9);
 
-		int timer;
 		timer = loading_message.return_timer();
 
 
@@ -146,6 +178,7 @@ public class UI extends PApplet
 		}
 		else
 		{
+			overButton();
 			draw_sequence();
 			memoryLegend1.render();
 			memoryLegend2.render();
@@ -170,6 +203,20 @@ public class UI extends PApplet
 			text(mouseY, width / 10, height / 9);
 
 			draw_menu_options();
+
+			switch (which)
+			{
+				case 0:
+					break;
+
+				case 1:
+					break;
+
+				case 2:
+					exit();
+				default:
+					break;
+			}
 		}
 	}
 
