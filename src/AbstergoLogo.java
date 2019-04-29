@@ -14,7 +14,7 @@ public class AbstergoLogo implements Loading
 		this.coordinateY = y;
 	}
 
-	public void draw_trapezium(int trans)
+	private void draw_trapezium(int trans)
 	{
 		ui.pushMatrix();
 		ui.translate(coordinateX, coordinateY);
@@ -29,7 +29,7 @@ public class AbstergoLogo implements Loading
 		ui.popMatrix();
 	}
 
-	public void draw_logo()
+	private void draw_logo()
 	{
 		draw_trapezium(0);
 		draw_trapezium(120);

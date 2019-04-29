@@ -34,7 +34,7 @@ public class UI extends PApplet
 
 	public void setup()
 	{
-		PFont my_font = createFont("Arial", width / 25, true);
+		PFont my_font = createFont("Arial", width / 20, true);
 		textFont(my_font);
 		load_menu_options();
 		set_menu_options();
@@ -123,7 +123,7 @@ public class UI extends PApplet
 
 	public void draw()
 	{
-		int side = 30;
+//		int side = 30;
 		background(37, 84, 199);
 
 //		triangle(width / 2 - side / 2, height / 2, width / 2, height / 2f - (sqrt(3) * (side / 2f)), width / 2 + side / 2, height / 2);
@@ -163,8 +163,10 @@ public class UI extends PApplet
 			}
 
 			textAlign(CENTER, BOTTOM);
+			textSize(width / 80);
 			text(mouseX, width / 20, height / 9);
 			textAlign(CENTER, BOTTOM);
+			textSize(width / 80);
 			text(mouseY, width / 10, height / 9);
 
 			draw_menu_options();

@@ -32,7 +32,8 @@ class MemoryLegend
 			ui.fill(colourMemory);
 			ui.rect(coordinateX, coordinateY, rectWidth, -rectHeight);
 			ui.textAlign(ui.CENTER, ui.BOTTOM);
-			ui.text("Complete Memory", coordinateX + ui.width / 15f, coordinateY);
+			ui.textSize(ui.width / 80);
+			ui.text("Complete Memory", coordinateX + ui.width / 12f, coordinateY);
 		}
 		else
 		{
@@ -43,7 +44,8 @@ class MemoryLegend
 			ui.fill(colourMemory);
 			ui.rect(coordinateX, coordinateY, rectWidth, rectHeight);
 			ui.textAlign(ui.CENTER, ui.TOP);
-			ui.text("Incomplete Memory", coordinateX + ui.width / 15f, coordinateY);
+			ui.textSize(ui.width / 80);
+			ui.text("Incomplete Memory", coordinateX + ui.width / 12f, coordinateY);
 		}
 	}
 
