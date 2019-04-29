@@ -1,4 +1,3 @@
 Title,Description
->Main,Show memory progress
->Options,Adjust audio, visual and other parameters
->Exit,Terminate the session
+Volume, -,
+Volume, +

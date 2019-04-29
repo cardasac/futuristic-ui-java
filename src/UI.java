@@ -18,12 +18,14 @@ public class UI extends PApplet
 	private Minim minim;
 	private ArrayList<DNA> dna1 = new ArrayList<>();
 	private ArrayList<DNA> dna2 = new ArrayList<>();
+	private ArrayList<MenuOptions> menu = new ArrayList<>();
 	private ArrayList<MenuOptions> options = new ArrayList<>();
 	private LoadingText loading_message;
 	private AbstergoLogo abstergoLogo;
 	private MemoryLegend memoryLegend1;
 	private MemoryLegend memoryLegend2;
-	private ArrayList<Button> buttonList = new ArrayList<>();
+	private ArrayList<Button> menuButtonList = new ArrayList<>();
+	private ArrayList<Button> optionButtonList = new ArrayList<>();
 	private int timer;
 	private int which = 0;
 
@@ -39,7 +41,7 @@ public class UI extends PApplet
 	{
 		PFont my_font = createFont("Arial", width / 20, true);
 		textFont(my_font);
-		loadMenuOptions();
+		loadMenuOptions("menu.csv", this.menu);
 		setMenuOptions();
 
 		loadMusic();
@@ -68,13 +70,13 @@ public class UI extends PApplet
 		memoryLegend2 = new MemoryLegend(this, al, 0, false);
 	}
 
-	private void loadMenuOptions()
+	private void loadMenuOptions(String filename, ArrayList<MenuOptions> name)
 	{
-		Table table = loadTable("options.csv", "header");
+		Table table = loadTable(filename, "header");
 		for (TableRow tr : table.rows())
 		{
 			MenuOptions p = new MenuOptions(tr);
-			options.add(p);
+			name.add(p);
 		}
 	}
 
@@ -83,19 +85,19 @@ public class UI extends PApplet
 		float ratio = width / 15f;
 		float rectWidth = ratio * (11 / 3f);
 		float rectHeight = height / 6;
-		for (int i = 0; i < options.size(); i++)
+		for (int i = 0; i < menu.size(); i++)
 		{
 			float textPlacement = ratio + (ratio + rectWidth) * i + rectWidth / 2;
 			float ratioFormula = ratio + (ratio + rectWidth) * i;
-			MenuOptions p = options.get(i);
+			MenuOptions p = menu.get(i);
 			Button but = new Button(this, ratioFormula, height - height / 3, rectWidth, rectHeight, textPlacement, p.getName(), p.getDescription());
-			buttonList.add(but);
+			menuButtonList.add(but);
 		}
 	}
 
 	private void drawMenuOptions()
 	{
-		for (Button button : buttonList)
+		for (Button button : menuButtonList)
 		{
 			button.render();
 		}
@@ -131,12 +133,22 @@ public class UI extends PApplet
 	{
 		if (abstergoLogo.check_finish(timer))
 		{
-			for (Button b : buttonList)
+			for (Button b : menuButtonList)
 			{
 				if (mouseX >= b.getX() && mouseX <= b.getX() + b.getRectWidth() && mouseY >= b.getY() && mouseY <= b.getY() + b.getRectHeight())
 				{
-					which = buttonList.indexOf(b);
+					which = menuButtonList.indexOf(b);
 				}
+			}
+
+			if (player.getGain() < 0)
+			{
+				player.shiftGain(player.getGain(), player.getGain() + 5, FADE);
+			}
+
+			if (player.getGain() > -45)
+			{
+				player.shiftGain(player.getGain(), player.getGain() - 5, FADE);
 			}
 		}
 	}
@@ -145,7 +157,7 @@ public class UI extends PApplet
 	{
 		if (abstergoLogo.check_finish(timer))
 		{
-			for (Button b : buttonList)
+			for (Button b : menuButtonList)
 			{
 				if (mouseX >= b.getX() && mouseX <= b.getX() + b.getRectWidth() && mouseY >= b.getY() && mouseY <= b.getY() + b.getRectHeight())
 				{
@@ -201,18 +213,7 @@ public class UI extends PApplet
 		textAlign(CENTER, CENTER);
 		text("-", width / 2f - rectWidth, height / 2f - rectHeight / 5f);
 
-		if (player.getGain() < 0)
-		{
-			player.shiftGain(player.getGain(), player.getGain() + 5, FADE);
-//			which = 0;
-		}
 
-		if (player.getGain() > -45)
-		{
-			player.shiftGain(player.getGain(), player.getGain() - 5, FADE);
-//			which = 0;
-		}
-		text("+", rectHeight / 2, rectWidth / 2);
 	}
 
 	public void draw()
