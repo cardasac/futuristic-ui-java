@@ -1,56 +1,24 @@
-import processing.data.*;
+import processing.data.TableRow;
 
 public class Menu_Options
 {
 	private String name;
-	private float price;
+	private String description;
 
-	public Menu_Options(String name, float price)
+	public Menu_Options(String name, String description)
 	{
 		this.name = name;
-		this.price = price;
-	}
-
-	public String toString()
-	{
-		return name + "\t" + price;
+		this.description = description;
 	}
 
 	public Menu_Options(TableRow tr)
 	{
 		// Constructor chaining
-		this(tr.getString("Title"), tr.getFloat("Description"));
+		this(tr.getString("Title"), tr.getString("Description"));
 	}
 
-	/**
-	 * @return the name
-	 */
-	public String getName()
+	public String toString()
 	{
-		return name;
-	}
-
-	/**
-	 * @param name the name to set
-	 */
-	public void setName(String name)
-	{
-		this.name = name;
-	}
-
-	/**
-	 * @return the price
-	 */
-	public float getPrice()
-	{
-		return price;
-	}
-
-	/**
-	 * @param price the price to set
-	 */
-	public void setPrice(float price)
-	{
-		this.price = price;
+		return name + "\t" + description;
 	}
 }

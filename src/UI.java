@@ -40,13 +40,13 @@ public class UI extends PApplet
 
 		for (int i = 0; i < 10; i++)
 		{
-			DNA s = new DNA(this, 100, 150 + i * 50, 50);
+			DNA s = new DNA(this, 100, 150 + i * 50, 20);
 			dna1.add(s);
 		}
 
 		for (int i = 0; i < 10; i++)
 		{
-			DNA s = new DNA(this, width - 300, 150 + i * 50, 50);
+			DNA s = new DNA(this, width - 300, 150 + i * 50, 20);
 			dna2.add(s);
 		}
 

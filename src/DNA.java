@@ -9,6 +9,7 @@ class DNA
 	private float translate_x;
 	private float translate_y;
 	private float rotate_y;
+	private float translateAll = 50;
 
 	DNA(UI ui, float x, float y, float size)
 	{
@@ -33,11 +34,11 @@ class DNA
 
 		ui.noStroke();
 		ui.fill(255);
-		ui.translate(100, 0);
-		ui.box(150, radius / 5, radius / 5);
+		ui.translate(translateAll, 0);
+		ui.box(80, radius / 5, radius / 5);
 
 		ui.noStroke();
-		ui.translate(100, 0);
+		ui.translate(translateAll, 0);
 		ui.fill(255);
 		ui.sphere(radius);
 
@@ -47,7 +48,7 @@ class DNA
 	void update()
 	{
 		rotate_y = y + radians(ui.frameCount);
-		translate_x = x + 100;
+		translate_x = x + translateAll;
 		translate_y = 0;
 	}
 }
