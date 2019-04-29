@@ -4,16 +4,18 @@ class Button extends UIElement
 	private float rectHeight;
 	private String text1;
 	private String text2;
-	private float textPlacement;
+	private float textPlacementX;
+	private float textPlacementY;
 
-	Button(UI ui, float x, float y, float rectWidth, float rectHeight, float textPlacement, String text1, String text2)
+	Button(UI ui, float x, float y, float rectWidth, float rectHeight, float textPlacementX, float textPlacementY, String text1, String text2)
 	{
 		this.ui = ui;
 		this.coordinateX = x;
 		this.coordinateY = y;
 		this.rectWidth = rectWidth;
 		this.rectHeight = rectHeight;
-		this.textPlacement = textPlacement;
+		this.textPlacementX = textPlacementX;
+		this.textPlacementY = textPlacementY;
 		this.text1 = text1;
 		this.text2 = text2;
 	}
@@ -67,12 +69,12 @@ class Button extends UIElement
 		ui.fill(255);
 		ui.textAlign(ui.CENTER, ui.CENTER);
 		ui.textSize(ui.width / 40);
-		ui.text(text1, textPlacement, ui.height - ui.height / 3f + rectHeight / 2);
+		ui.text(text1, textPlacementX, textPlacementY + rectHeight / 2);
 
 		ui.fill(255);
 		ui.textAlign(ui.CENTER, ui.CENTER);
 		ui.textSize(ui.width / 80);
-		ui.text(text2, textPlacement, ui.height - ui.height / 3.5f + rectHeight / 2);
+		ui.text(text2, textPlacementX, textPlacementY + rectHeight / 1.25f);
 	}
 
 	void update()

@@ -28,6 +28,7 @@ public class UI extends PApplet
 	private ArrayList<Button> optionButtonList = new ArrayList<>();
 	private int timer;
 	private int which = 0;
+	private int volume;
 
 	public void settings()
 	{
@@ -42,7 +43,9 @@ public class UI extends PApplet
 		PFont my_font = createFont("Arial", width / 20, true);
 		textFont(my_font);
 		loadMenuOptions("menu.csv", this.menu);
-		setMenuOptions();
+		loadMenuOptions("options.csv", this.options);
+		setMenu();
+		setOptions();
 
 		loadMusic();
 
@@ -80,24 +83,49 @@ public class UI extends PApplet
 		}
 	}
 
-	private void setMenuOptions()
+	private void setMenu()
 	{
 		float ratio = width / 15f;
 		float rectWidth = ratio * (11 / 3f);
 		float rectHeight = height / 6;
 		for (int i = 0; i < menu.size(); i++)
 		{
-			float textPlacement = ratio + (ratio + rectWidth) * i + rectWidth / 2;
+			float textPlacementX = ratio + (ratio + rectWidth) * i + rectWidth / 2;
+			float textPlacementY = height - height / 3;
 			float ratioFormula = ratio + (ratio + rectWidth) * i;
 			MenuOptions p = menu.get(i);
-			Button but = new Button(this, ratioFormula, height - height / 3, rectWidth, rectHeight, textPlacement, p.getName(), p.getDescription());
+			Button but = new Button(this, ratioFormula, textPlacementY, rectWidth, rectHeight, textPlacementX, textPlacementY, p.getName(), p.getDescription());
 			menuButtonList.add(but);
 		}
 	}
 
-	private void drawMenuOptions()
+	private void setOptions()
+	{
+		float ratio = width / 9f;
+		float rectWidth = ratio * 3f;
+		float rectHeight = height / 8;
+		for (int i = 0; i < options.size(); i++)
+		{
+			float textPlacementX = ratio + (ratio + rectWidth) * i + rectWidth / 2;
+			float textPlacementY = height / 2.25f;
+			float ratioFormula = ratio + (ratio + rectWidth) * i;
+			MenuOptions p = options.get(i);
+			Button but = new Button(this, ratioFormula, textPlacementY, rectWidth, rectHeight, textPlacementX, textPlacementY, p.getName(), p.getDescription());
+			optionButtonList.add(but);
+		}
+	}
+
+	private void drawMenu()
 	{
 		for (Button button : menuButtonList)
+		{
+			button.render();
+		}
+	}
+
+	private void drawOptions()
+	{
+		for (Button button : optionButtonList)
 		{
 			button.render();
 		}
@@ -141,14 +169,12 @@ public class UI extends PApplet
 				}
 			}
 
-			if (player.getGain() < 0)
+			for (Button b : optionButtonList)
 			{
-				player.shiftGain(player.getGain(), player.getGain() + 5, FADE);
-			}
-
-			if (player.getGain() > -45)
-			{
-				player.shiftGain(player.getGain(), player.getGain() - 5, FADE);
+				if (mouseX >= b.getX() && mouseX <= b.getX() + b.getRectWidth() && mouseY >= b.getY() && mouseY <= b.getY() + b.getRectHeight())
+				{
+					volume = optionButtonList.indexOf(b) + 1;
+				}
 			}
 		}
 	}
@@ -189,31 +215,41 @@ public class UI extends PApplet
 	{
 		float rectWidth = width / 10;
 		float rectHeight = height / 15;
-		noStroke();
-		fill(255);
-		rect(height / 2, width / 2, 50, 50);
 
 		float map1 = map(player.getGain(), 0, -45, rectWidth, 0);
 
 		stroke(0);
 		noFill();
-		rect(width / 2f - rectWidth / 2f, height / 2f - rectHeight / 2f, rectWidth, rectHeight);
+		rect(width / 2f - rectWidth / 2f, height / 9, rectWidth, rectHeight);
 
 		stroke(0);
 		fill(255);
-		rect(width / 2f - rectWidth / 2f, height / 2f - rectHeight / 2f, map1, rectHeight);
+		rect(width / 2f - rectWidth / 2f, height / 9, map1, rectHeight);
 
-		textSize(width / 20);
-		fill(255);
-		textAlign(CENTER, CENTER);
-		text("+", width / 2f + rectWidth, height / 2f - rectHeight / 5f);
+		switch (volume)
+		{
+			case 0:
+				volume = 0;
+				break;
+			case 1:
+				if (player.getGain() > -45)
+				{
+					player.shiftGain(player.getGain(), player.getGain() - 5, FADE);
+				}
 
-		textSize(width / 20);
-		fill(255);
-		textAlign(CENTER, CENTER);
-		text("-", width / 2f - rectWidth, height / 2f - rectHeight / 5f);
+				volume = 0;
+				break;
+			case 2:
+				if (player.getGain() < 0)
+				{
+					player.shiftGain(player.getGain(), player.getGain() + 5, FADE);
+				}
 
-
+				volume = 0;
+				break;
+			default:
+				break;
+		}
 	}
 
 	public void draw()
@@ -243,7 +279,7 @@ public class UI extends PApplet
 			drawSequence();
 			memoryLegend1.render();
 			memoryLegend2.render();
-			drawMenuOptions();
+			drawMenu();
 			text(which, 10, 10);
 
 			switch (which)
@@ -254,6 +290,7 @@ public class UI extends PApplet
 					break;
 				case 1:
 					volumeButtons();
+					drawOptions();
 					break;
 				case 2:
 //					player.setGain(0);
