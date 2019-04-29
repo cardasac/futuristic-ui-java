@@ -94,7 +94,7 @@ public class UI extends PApplet
 			float textPlacementY = height - height / 3;
 			float ratioFormula = ratio + (ratio + rectWidth) * i;
 			MenuOptions p = menu.get(i);
-			Button but = new Button(this, ratioFormula, textPlacementY, rectWidth, rectHeight, textPlacementX, textPlacementY, p.getName(), p.getDescription());
+			Button but = new Button(this, ratioFormula, textPlacementY, rectWidth, rectHeight, textPlacementX, textPlacementY, p.getName(), p.getDescription(), 255, 255);
 			menuButtonList.add(but);
 		}
 	}
@@ -110,7 +110,7 @@ public class UI extends PApplet
 			float textPlacementY = height / 2.25f;
 			float ratioFormula = ratio + (ratio + rectWidth) * i;
 			MenuOptions p = options.get(i);
-			Button but = new Button(this, ratioFormula, textPlacementY, rectWidth, rectHeight, textPlacementX, textPlacementY, p.getName(), p.getDescription());
+			Button but = new Button(this, ratioFormula, textPlacementY, rectWidth, rectHeight, textPlacementX, textPlacementY, p.getName(), p.getDescription(), 255, 0);
 			optionButtonList.add(but);
 		}
 	}

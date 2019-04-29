@@ -6,8 +6,10 @@ class Button extends UIElement
 	private String text2;
 	private float textPlacementX;
 	private float textPlacementY;
+	private float textColor;
+	private float backgroundColor;
 
-	Button(UI ui, float x, float y, float rectWidth, float rectHeight, float textPlacementX, float textPlacementY, String text1, String text2)
+	Button(UI ui, float x, float y, float rectWidth, float rectHeight, float textPlacementX, float textPlacementY, String text1, String text2, float textColor, float backgroundColor)
 	{
 		this.ui = ui;
 		this.coordinateX = x;
@@ -18,6 +20,8 @@ class Button extends UIElement
 		this.textPlacementY = textPlacementY;
 		this.text1 = text1;
 		this.text2 = text2;
+		this.textColor = textColor;
+		this.backgroundColor = backgroundColor;
 	}
 
 	public float getX()
@@ -63,15 +67,15 @@ class Button extends UIElement
 	void render()
 	{
 		ui.noFill();
-		ui.stroke(255);
+		ui.stroke(backgroundColor);
 		ui.rect(coordinateX, coordinateY, rectWidth, rectHeight);
 
-		ui.fill(255);
+		ui.fill(textColor);
 		ui.textAlign(ui.CENTER, ui.CENTER);
 		ui.textSize(ui.width / 40);
 		ui.text(text1, textPlacementX, textPlacementY + rectHeight / 2);
 
-		ui.fill(255);
+		ui.fill(textColor);
 		ui.textAlign(ui.CENTER, ui.CENTER);
 		ui.textSize(ui.width / 80);
 		ui.text(text2, textPlacementX, textPlacementY + rectHeight / 1.25f);
