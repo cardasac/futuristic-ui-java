@@ -35,7 +35,8 @@ public class UI extends PApplet
 		size(1280, 720, P3D);
 //		size(1600, 900, P3D);
 //		smooth(8);
-//		pixelDensity(displayDensity());
+//		fullScreen(P3D);
+		pixelDensity(displayDensity());
 	}
 
 	public void setup()
@@ -51,13 +52,13 @@ public class UI extends PApplet
 
 		for (int i = 0; i < 10; i++)
 		{
-			DNA s = new DNA(this, 100 + i * 50, height / 2.25f, 20, 255);
+			DNA s = new DNA(this, width / 12f + i * 50, height / 2.25f, 20, 255);
 			dna1.add(s);
 		}
 
 		for (int i = 0; i < 10; i++)
 		{
-			DNA s = new DNA(this, width - 100 - i * 50, height / 2.25f, 20, 0);
+			DNA s = new DNA(this, width - width / 12f - i * 50, height / 2.25f, 20, 0);
 			dna2.add(s);
 		}
 
@@ -103,7 +104,7 @@ public class UI extends PApplet
 	{
 		float ratio = width / 9f;
 		float rectWidth = ratio * 3f;
-		float rectHeight = height / 8;
+		float rectHeight = height / 10;
 		for (int i = 0; i < options.size(); i++)
 		{
 			float textPlacementX = ratio + (ratio + rectWidth) * i + rectWidth / 2;
@@ -294,7 +295,6 @@ public class UI extends PApplet
 			memoryLegend1.render();
 			memoryLegend2.render();
 			drawMenu();
-			text(which, 10, 10);
 
 			switch (which)
 			{
@@ -310,8 +310,6 @@ public class UI extends PApplet
 				default:
 					break;
 			}
-
-
 		}
 	}
 

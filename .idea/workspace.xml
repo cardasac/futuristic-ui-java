@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7868b423-a640-45a3-a43a-37e3f26710e9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Button.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -21,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+            <state relative-caret-position="161">
+              <caret line="297" selection-start-line="297" selection-end-line="297" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,12 +43,12 @@
     <findStrings>
       <find>loading</find>
       <find>counter</find>
-      <find>text</find>
       <find>mouse</find>
       <find>endSha</find>
       <find>setValue</find>
       <find>which</find>
       <find>options</find>
+      <find>text</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -75,8 +74,8 @@
         <option value="$PROJECT_DIR$/src/DNA.java" />
         <option value="$PROJECT_DIR$/data/menu.csv" />
         <option value="$PROJECT_DIR$/data/options.csv" />
-        <option value="$PROJECT_DIR$/src/UI.java" />
         <option value="$PROJECT_DIR$/src/Button.java" />
+        <option value="$PROJECT_DIR$/src/UI.java" />
       </list>
     </option>
   </component>
@@ -190,7 +189,7 @@
       <workItem from="1555439505151" duration="17860000" />
       <workItem from="1555501085428" duration="1102000" />
       <workItem from="1556109854167" duration="3305000" />
-      <workItem from="1556274057534" duration="40762000" />
+      <workItem from="1556274057534" duration="41779000" />
     </task>
     <task id="LOCAL-00001" summary="Add music libraries and add song for menu">
       <created>1555010547775</created>
@@ -437,11 +436,25 @@
       <option name="project" value="LOCAL" />
       <updated>1556559277826</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Modify button constructor and add color management">
+      <created>1556559638187</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1556559638187</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Add current time and abstergo name">
+      <created>1556560419921</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1556560419921</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="91036000" />
+    <option name="totallyTimeSpent" value="92053000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -511,8 +524,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/AC_UI" />
     </ignored-roots>
-    <MESSAGE value="Fix draw_lines method with mathematical formula to display as grid" />
-    <MESSAGE value="Re-define AbstergoLogo, include more maths for less code and now position is easy to change" />
     <MESSAGE value="Add Loading Interface and optimise timed events" />
     <MESSAGE value="Remove unwanted variables" />
     <MESSAGE value="Change colours and remove lights" />
@@ -536,7 +547,9 @@
     <MESSAGE value="Add volume plus and minus buttons" />
     <MESSAGE value="Add file for options" />
     <MESSAGE value="Add working volume buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add working volume buttons" />
+    <MESSAGE value="Modify button constructor and add color management" />
+    <MESSAGE value="Add current time and abstergo name" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add current time and abstergo name" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/util/Objects.java" />
@@ -674,15 +687,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Button.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="501">
-          <caret line="77" column="25" selection-start-line="77" selection-start-column="25" selection-end-line="77" selection-end-column="25" />
+        <state relative-caret-position="536">
+          <caret line="82" lean-forward="true" selection-start-line="82" selection-end-line="82" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+        <state relative-caret-position="161">
+          <caret line="297" selection-start-line="297" selection-end-line="297" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
