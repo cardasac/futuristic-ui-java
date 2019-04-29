@@ -13,8 +13,6 @@ import java.util.Date;
 
 public class UI extends PApplet
 {
-	private static final int FADE = 250;
-
 	private AudioPlayer player;
 	private Minim minim;
 	private ArrayList<DNA> dna1 = new ArrayList<>();
@@ -159,7 +157,7 @@ public class UI extends PApplet
 		}
 	}
 
-	public void mainMenu()
+	private void mainMenu()
 	{
 		for (DNA value : dna1)
 		{
@@ -174,7 +172,7 @@ public class UI extends PApplet
 		}
 	}
 
-	public void volumeButtons()
+	private void volumeButtons()
 	{
 		noStroke();
 		fill(255);

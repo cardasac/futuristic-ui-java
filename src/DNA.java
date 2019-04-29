@@ -17,7 +17,6 @@ class DNA extends UIElement
 		this.color = color;
 		radius = size / 2;
 		translateAll = ui.height / 20;
-
 	}
 
 	void render()
