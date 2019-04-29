@@ -189,9 +189,9 @@ public class UI extends PApplet
 				if (mouseX >= b.getX() && mouseX <= b.getX() + b.getRectWidth() && mouseY >= b.getY() && mouseY <= b.getY() + b.getRectHeight())
 				{
 					stroke(255, millis() / 3 % 255);
-					line(b.getX() - width / 25f, b.getY(), b.getX() - width / 25f, b.getY() + b.getRectHeight());
+					line(b.getX() - width / 30f, b.getY(), b.getX() - width / 30f, b.getY() + b.getRectHeight());
 					stroke(255, millis() / 3 % 255);
-					line(b.getX() + width / 25f + b.getRectWidth(), b.getY(), b.getX() + width / 25f + b.getRectWidth(), b.getY() + b.getRectHeight());
+					line(b.getX() + width / 30f + b.getRectWidth(), b.getY(), b.getX() + width / 30f + b.getRectWidth(), b.getY() + b.getRectHeight());
 				}
 			}
 		}
