@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7868b423-a640-45a3-a43a-37e3f26710e9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AbstergoLogo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AbstergoLogo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Button.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Button.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DNA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DNA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Loading_Text.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LoadingText.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MemoryLegend.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MemoryLegend.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Menu_Options.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MenuOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/options.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/options.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UIElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UIElement.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,14 +18,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="223" column="42" selection-start-line="223" selection-start-column="42" selection-end-line="223" selection-end-column="42" />
+            <state relative-caret-position="241">
+              <caret line="222" column="23" selection-start-line="222" selection-start-column="23" selection-end-line="222" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data/options.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -96,7 +98,6 @@
         <option value="$PROJECT_DIR$/src/Ball.java" />
         <option value="$PROJECT_DIR$/src/Try.java" />
         <option value="$PROJECT_DIR$/src/Color.java" />
-        <option value="$PROJECT_DIR$/data/options.csv" />
         <option value="$PROJECT_DIR$/src/Menu_Options.java" />
         <option value="$PROJECT_DIR$/src/Setup.java" />
         <option value="$PROJECT_DIR$/src/Loading_Text.java" />
@@ -109,6 +110,7 @@
         <option value="$PROJECT_DIR$/src/AbstergoLogo.java" />
         <option value="$PROJECT_DIR$/src/LoadingText.java" />
         <option value="$PROJECT_DIR$/src/UI.java" />
+        <option value="$PROJECT_DIR$/data/options.csv" />
       </list>
     </option>
   </component>
@@ -222,7 +224,7 @@
       <workItem from="1555439505151" duration="17860000" />
       <workItem from="1555501085428" duration="1102000" />
       <workItem from="1556109854167" duration="3305000" />
-      <workItem from="1556274057534" duration="29616000" />
+      <workItem from="1556274057534" duration="30438000" />
     </task>
     <task id="LOCAL-00001" summary="Add music libraries and add song for menu">
       <created>1555010547775</created>
@@ -413,17 +415,24 @@
       <option name="project" value="LOCAL" />
       <updated>1556542723566</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Implement volume options">
+      <created>1556548442999</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1556548442999</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79890000" />
+    <option name="totallyTimeSpent" value="80712000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20028612" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20028612" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -432,7 +441,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32771084" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32771084" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39869988" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -518,7 +527,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/AC_UI" />
     </ignored-roots>
-    <MESSAGE value="Add spiraling spheres" />
     <MESSAGE value="Create double helix" />
     <MESSAGE value="Reformat DNA code" />
     <MESSAGE value="Add typewriter text" />
@@ -543,7 +551,8 @@
     <MESSAGE value="Adjust text sizes to be bigger" />
     <MESSAGE value="Add mouse functions for menu options" />
     <MESSAGE value="Add abstract class for UI elements" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add abstract class for UI elements" />
+    <MESSAGE value="Implement volume options" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement volume options" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/util/Objects.java" />
@@ -581,13 +590,6 @@
             <element signature="e#61#62#0" expanded="true" />
             <element signature="e#74#75#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/options.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
@@ -684,11 +686,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="223" column="42" selection-start-line="223" selection-start-column="42" selection-end-line="223" selection-end-column="42" />
+        <state relative-caret-position="241">
+          <caret line="222" column="23" selection-start-line="222" selection-start-column="23" selection-end-line="222" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/options.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="9" lean-forward="true" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
         </state>
       </provider>
     </entry>

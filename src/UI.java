@@ -27,6 +27,7 @@ public class UI extends PApplet
 	private ArrayList<Button> buttonList = new ArrayList<>();
 	private int timer;
 	private int which;
+	private int wholeScreen;
 
 	public void settings()
 	{
@@ -40,8 +41,8 @@ public class UI extends PApplet
 	{
 		PFont my_font = createFont("Arial", width / 20, true);
 		textFont(my_font);
-		load_menu_options();
-		set_menu_options();
+		loadMenuOptions();
+		setMenuOptions();
 
 		loadMusic();
 
@@ -69,7 +70,7 @@ public class UI extends PApplet
 		memoryLegend2 = new MemoryLegend(this, al, 0, false);
 	}
 
-	private void load_menu_options()
+	private void loadMenuOptions()
 	{
 		Table table = loadTable("options.csv", "header");
 		for (TableRow tr : table.rows())
@@ -79,7 +80,7 @@ public class UI extends PApplet
 		}
 	}
 
-	private void set_menu_options()
+	private void setMenuOptions()
 	{
 		float ratio = width / 15f;
 		float rectWidth = ratio * (11 / 3f);
@@ -94,7 +95,7 @@ public class UI extends PApplet
 		}
 	}
 
-	private void draw_menu_options()
+	private void drawMenuOptions()
 	{
 		for (Button button : buttonList)
 		{
@@ -102,7 +103,7 @@ public class UI extends PApplet
 		}
 	}
 
-	private void draw_lines(int y)
+	private void drawLines(int y)
 	{
 		float ratio = width / 10;
 		float line_size = ratio * (8 / 3f);
@@ -114,7 +115,7 @@ public class UI extends PApplet
 		}
 	}
 
-	private void draw_sequence()
+	private void drawSequence()
 	{
 		int lineSize = height / 144;
 		float placement1 = height / 2.8f;
@@ -171,12 +172,15 @@ public class UI extends PApplet
 		background(37, 84, 199);
 
 //		triangle(width / 2 - side / 2, height / 2, width / 2, height / 2f - (sqrt(3) * (side / 2f)), width / 2 + side / 2, height / 2);
-		draw_lines(height - height / 9);
-		draw_lines(height / 9);
-		fill(255);
-		textSize(width / 80);
+		drawLines(height - height / 9);
+		drawLines(height / 9);
+
 		float map1 = map(player.getGain(), 0, -45, 100, 0);
-		text(map1, 200, 200);
+
+		stroke(0);
+		noFill();
+		rect(0, 30, 100, 50);
+
 		stroke(0);
 		fill(255);
 		rect(0, 30, map1, 50);
@@ -196,29 +200,25 @@ public class UI extends PApplet
 		else
 		{
 			overButton();
-			draw_sequence();
+			drawSequence();
 			memoryLegend1.render();
 			memoryLegend2.render();
-
-			for (DNA value : dna1)
-			{
-				value.render();
-				value.update();
-			}
-
-			for (DNA value : dna2)
-			{
-				value.render();
-				value.update();
-			}
-
-			draw_menu_options();
+			drawMenuOptions();
 
 			switch (which)
 			{
 				case 0:
-					draw_menu_options();
+					for (DNA value : dna1)
+					{
+						value.render();
+						value.update();
+					}
 
+					for (DNA value : dna2)
+					{
+						value.render();
+						value.update();
+					}
 					break;
 				case 1:
 					if (player.getGain() < 0)
@@ -240,6 +240,8 @@ public class UI extends PApplet
 				default:
 					break;
 			}
+
+
 		}
 	}
 
