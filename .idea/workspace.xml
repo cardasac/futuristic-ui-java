@@ -21,20 +21,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/UI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="64" column="44" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+            <state relative-caret-position="388">
+              <caret line="276" column="54" selection-start-line="276" selection-start-column="54" selection-end-line="276" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AbstergoLogo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
             </state>
           </provider>
         </entry>
@@ -199,7 +190,7 @@
       <workItem from="1555439505151" duration="17860000" />
       <workItem from="1555501085428" duration="1102000" />
       <workItem from="1556109854167" duration="3305000" />
-      <workItem from="1556274057534" duration="43445000" />
+      <workItem from="1556274057534" duration="44326000" />
     </task>
     <task id="LOCAL-00001" summary="Add music libraries and add song for menu">
       <created>1555010547775</created>
@@ -474,11 +465,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556562584307</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Modify typewriter message">
+      <created>1556562899065</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1556562899065</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93719000" />
+    <option name="totallyTimeSpent" value="94600000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -548,7 +546,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/AC_UI" />
     </ignored-roots>
-    <MESSAGE value="Change colours and remove lights" />
     <MESSAGE value="Correct button layout and insert text in centre" />
     <MESSAGE value="Enlarge UI for better fit central element" />
     <MESSAGE value="Change Options class to fit all the elements" />
@@ -573,7 +570,8 @@
     <MESSAGE value="Add current time and abstergo name" />
     <MESSAGE value="Cleanup UI class" />
     <MESSAGE value="Adjust emphasis lines" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adjust emphasis lines" />
+    <MESSAGE value="Modify typewriter message" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modify typewriter message" />
   </component>
   <component name="editorHistoryManager">
     <entry file="jar://C:/Program Files/Java/jdk-11.0.2/lib/src.zip!/java.base/java/util/Objects.java" />
@@ -711,15 +709,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AbstergoLogo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="660">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/UI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="64" column="44" selection-start-line="64" selection-start-column="44" selection-end-line="64" selection-end-column="44" />
+        <state relative-caret-position="388">
+          <caret line="276" column="54" selection-start-line="276" selection-start-column="54" selection-end-line="276" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

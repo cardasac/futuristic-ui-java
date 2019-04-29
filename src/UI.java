@@ -27,15 +27,15 @@ public class UI extends PApplet
 	private ArrayList<Button> menuButtonList = new ArrayList<>();
 	private ArrayList<Button> optionButtonList = new ArrayList<>();
 	private int timer;
-	private int which = 0;
+	private int which;
 	private int volume;
 
 	public void settings()
 	{
-		size(1280, 720, P3D);
+//		size(1280, 720, P3D);
 //		size(1600, 900, P3D);
 //		smooth(8);
-//		fullScreen(P3D);
+		fullScreen(P3D);
 		pixelDensity(displayDensity());
 	}
 
@@ -254,14 +254,13 @@ public class UI extends PApplet
 	{
 		background(37, 84, 199);
 
-//		triangle(width / 2 - side / 2, height / 2, width / 2, height / 2f - (sqrt(3) * (side / 2f)), width / 2 + side / 2, height / 2);
 		drawLines(height - height / 9);
 		drawLines(height / 9);
 
 		textSize(width / 40);
 		fill(255);
 		textAlign(LEFT, BOTTOM);
-		text("Abstergo Industries", width / 30, height / 9);
+		text("Animus version 1.3", width / 30, height / 9);
 
 		DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
 		String currentTime = dateFormat.format(new Date());
@@ -271,6 +270,11 @@ public class UI extends PApplet
 		textAlign(CENTER, BOTTOM);
 		text(currentTime, width / 2, height / 9);
 
+
+		stroke(255, 20);
+		line(width / 10, 0, width - width / 10, height);
+		stroke(255, 20);
+		line(width - width / 5, 0, width / 5, height);
 
 		timer = loading_message.return_timer();
 
@@ -328,4 +332,3 @@ public class UI extends PApplet
 		super.stop();
 	}
 }
-
