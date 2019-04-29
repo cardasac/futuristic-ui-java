@@ -13,7 +13,6 @@ import java.util.Date;
 
 public class UI extends PApplet
 {
-	ArrayList<PVector> square = new ArrayList<PVector>();
 	private AudioPlayer player;
 	private Minim minim;
 	private ArrayList<DNA> dna1 = new ArrayList<>();
@@ -114,12 +113,14 @@ public class UI extends PApplet
 
 	private void draw_sequence()
 	{
-		int lineSize = 5;
+		int lineSize = height / 144;
 		float placement1 = height / 2.8f;
 		float placement2 = height - height / 2.8f;
 		for (int i = 0; i < width; i += width / 100)
 		{
+			stroke(255);
 			line(i, placement1, i, placement1 + lineSize);
+			stroke(255);
 			line(i, placement2, i, placement2 + lineSize);
 		}
 	}
@@ -139,7 +140,7 @@ public class UI extends PApplet
 		}
 	}
 
-	public void overButton()
+	private void overButton()
 	{
 		if (abstergoLogo.check_finish(timer))
 		{
@@ -147,7 +148,9 @@ public class UI extends PApplet
 			{
 				if (mouseX >= b.getX() && mouseX <= b.getX() + b.getRectWidth() && mouseY >= b.getY() && mouseY <= b.getY() + b.getRectHeight())
 				{
+					stroke(255, millis() / 10 % 255);
 					line(b.getX() - width / 25f, b.getY(), b.getX() - width / 25f, b.getY() + b.getRectHeight());
+					stroke(255, millis() / 10 % 255);
 					line(b.getX() + width / 25f + b.getRectWidth(), b.getY(), b.getX() + width / 25f + b.getRectWidth(), b.getY() + b.getRectHeight());
 				}
 			}
