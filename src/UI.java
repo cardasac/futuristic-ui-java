@@ -27,7 +27,6 @@ public class UI extends PApplet
 	private ArrayList<Button> buttonList = new ArrayList<>();
 	private int timer;
 	private int which;
-	private int wholeScreen;
 
 	public void settings()
 	{
@@ -48,13 +47,13 @@ public class UI extends PApplet
 
 		for (int i = 0; i < 10; i++)
 		{
-			DNA s = new DNA(this, 100, 150 + i * 50, 20);
+			DNA s = new DNA(this, 100 + i * 50, height / 2.25f, 20);
 			dna1.add(s);
 		}
 
 		for (int i = 0; i < 10; i++)
 		{
-			DNA s = new DNA(this, width - 300, 150 + i * 50, 20);
+			DNA s = new DNA(this, width - 100 - i * 50, height / 2.25f, 20);
 			dna2.add(s);
 		}
 
@@ -125,7 +124,7 @@ public class UI extends PApplet
 			stroke(255);
 			line(i, placement1, i, placement1 + lineSize);
 			stroke(255);
-			line(i, placement2, i, placement2 + lineSize);
+			line(i, placement2, i, placement2 - lineSize);
 		}
 	}
 
@@ -145,13 +144,6 @@ public class UI extends PApplet
 
 	private void overButton()
 	{
-		textAlign(CENTER, BOTTOM);
-		textSize(width / 80);
-		text(mouseX, width / 20, height / 9);
-		textAlign(CENTER, BOTTOM);
-		textSize(width / 80);
-		text(mouseY, width / 10, height / 9);
-
 		if (abstergoLogo.check_finish(timer))
 		{
 			for (Button b : buttonList)

@@ -5,8 +5,8 @@ class DNA extends UIElement
 	private float radius;
 	private float translate_x;
 	private float translate_y;
-	private float rotate_y;
-	private float translateAll = 50;
+	private float rotate_x;
+	private float translateAll;
 
 	DNA(UI ui, float x, float y, float size)
 	{
@@ -14,6 +14,7 @@ class DNA extends UIElement
 		this.coordinateX = x;
 		this.coordinateY = y;
 		radius = size / 2;
+		translateAll = ui.height / 20;
 	}
 
 	void render()
@@ -21,8 +22,8 @@ class DNA extends UIElement
 		ui.pushMatrix();
 
 		ui.translate(translate_x, translate_y);
-		ui.rotateY(rotate_y);
-		ui.translate(-translate_x, translate_y);
+		ui.rotateX(rotate_x);
+		ui.translate(translate_x, -translate_y);
 
 		ui.noStroke();
 		ui.translate(coordinateX, coordinateY);
@@ -31,11 +32,11 @@ class DNA extends UIElement
 
 		ui.noStroke();
 		ui.fill(255);
-		ui.translate(translateAll, 0);
-		ui.box(80, radius / 5, radius / 5);
+		ui.translate(0, translateAll);
+		ui.box(radius / 5, ui.height / 9, radius / 5);
 
 		ui.noStroke();
-		ui.translate(translateAll, 0);
+		ui.translate(0, translateAll);
 		ui.fill(255);
 		ui.sphere(radius);
 
@@ -44,8 +45,8 @@ class DNA extends UIElement
 
 	void update()
 	{
-		rotate_y = coordinateY + radians(ui.frameCount);
-		translate_x = coordinateX + translateAll;
-		translate_y = 0;
+		rotate_x = coordinateX + radians(ui.frameCount);
+		translate_y = coordinateY + translateAll;
+		translate_x = 0;
 	}
 }
