@@ -3,6 +3,8 @@ import ddf.minim.Minim;
 import processing.core.PApplet;
 import processing.core.PFont;
 import processing.core.PVector;
+import processing.data.Table;
+import processing.data.TableRow;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -11,11 +13,11 @@ import java.util.Date;
 
 public class UI extends PApplet
 {
-	public ArrayList<Menu_Options> options = new ArrayList<>();
 	private AudioPlayer player;
 	private Minim minim;
 	private ArrayList<DNA> dna1 = new ArrayList<>();
 	private ArrayList<DNA> dna2 = new ArrayList<>();
+	private ArrayList<Menu_Options> options = new ArrayList<>();
 	private Loading_Text loading_message;
 	private AbstergoLogo abstergoLogo;
 	private MemoryLegend memoryLegend1;
@@ -32,7 +34,7 @@ public class UI extends PApplet
 	{
 		PFont my_font = createFont("Arial", 64, true);
 		textFont(my_font);
-		Setup.load_menu_options();
+		load_menu_options();
 
 		loadMusic();
 
@@ -89,6 +91,15 @@ public class UI extends PApplet
 		}
 	}
 
+	private void load_menu_options()
+	{
+		Table table = loadTable("options.csv", "header");
+		for (TableRow tr : table.rows())
+		{
+			Menu_Options p = new Menu_Options(tr);
+			options.add(p);
+		}
+	}
 
 	private void draw_lines(int y)
 	{
