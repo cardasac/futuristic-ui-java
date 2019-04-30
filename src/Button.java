@@ -66,9 +66,10 @@ class Button extends UIElement
 
 	void render()
 	{
-		ui.noFill();
-		ui.stroke(backgroundColor);
-		ui.rect(coordinateX, coordinateY, rectWidth, rectHeight);
+		ui.fill(backgroundColor);
+//		ui.stroke(backgroundColor);
+		ui.noStroke();
+		ui.rect(coordinateX, coordinateY, rectWidth, rectHeight, 35);
 
 		ui.fill(textColor);
 		ui.textAlign(ui.CENTER, ui.CENTER);

@@ -32,10 +32,10 @@ public class UI extends PApplet
 
 	public void settings()
 	{
-//		size(1280, 720, P3D);
+		size(1280, 720, P3D);
 //		size(1600, 900, P3D);
 //		smooth(8);
-		fullScreen(P3D);
+//		fullScreen(P3D);
 		pixelDensity(displayDensity());
 	}
 
@@ -92,7 +92,7 @@ public class UI extends PApplet
 			float textPlacementY = height - height / 3;
 			float ratioFormula = ratio + (ratio + rectWidth) * i;
 			MenuOptions p = menu.get(i);
-			Button but = new Button(this, ratioFormula, textPlacementY, rectWidth, rectHeight, textPlacementX, textPlacementY, p.getName(), p.getDescription(), 255, 255);
+			Button but = new Button(this, ratioFormula, textPlacementY, rectWidth, rectHeight, textPlacementX, textPlacementY, p.getName(), p.getDescription(), 0, 255);
 			menuButtonList.add(but);
 		}
 	}
