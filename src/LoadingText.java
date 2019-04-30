@@ -24,12 +24,12 @@ public class LoadingText extends UIElement implements Loading
 		counter = ui.millis() / 400;
 	}
 
-	public int return_timer()
+	public int returnTimer()
 	{
 		return counter * 400 / 1000;
 	}
 
-	public Boolean check_finish(int timer)
+	public Boolean checkFinish(int timer)
 	{
 		return counter == message.length();
 	}

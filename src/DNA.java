@@ -3,8 +3,8 @@ import static processing.core.PApplet.radians;
 class DNA extends UIElement
 {
 	private float radius;
-	private float translate_x;
-	private float translate_y;
+	private float translateX;
+	private float translateY;
 	private float rotateByX;
 	private float translateAll;
 	private float color;
@@ -23,9 +23,9 @@ class DNA extends UIElement
 	{
 		ui.pushMatrix();
 
-		ui.translate(translate_x, translate_y);
+		ui.translate(translateX, translateY);
 		ui.rotateX(rotateByX);
-		ui.translate(translate_x, -translate_y);
+		ui.translate(translateX, -translateY);
 
 		ui.noStroke();
 		ui.translate(coordinateX, coordinateY);
@@ -48,7 +48,7 @@ class DNA extends UIElement
 	void update()
 	{
 		rotateByX = coordinateX + radians(ui.frameCount);
-		translate_y = coordinateY + translateAll;
-		translate_x = 0;
+		translateY = coordinateY + translateAll;
+		translateX = 0;
 	}
 }

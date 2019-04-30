@@ -11,7 +11,7 @@ public class AbstergoLogo extends UIElement implements Loading
 		this.coordinateY = y;
 	}
 
-	private void draw_trapezium(int trans)
+	private void drawTrapezium(int trans)
 	{
 		ui.pushMatrix();
 		ui.translate(coordinateX, coordinateY);
@@ -26,11 +26,11 @@ public class AbstergoLogo extends UIElement implements Loading
 		ui.popMatrix();
 	}
 
-	private void draw_logo()
+	private void drawLogo()
 	{
-		draw_trapezium(0);
-		draw_trapezium(120);
-		draw_trapezium(240);
+		drawTrapezium(0);
+		drawTrapezium(120);
+		drawTrapezium(240);
 		ui.fill(255, ui.millis() / 10 % 255);
 		ui.textSize(ui.width / 20);
 		ui.textAlign(ui.CENTER, ui.CENTER);
@@ -39,7 +39,7 @@ public class AbstergoLogo extends UIElement implements Loading
 
 	public void render()
 	{
-		draw_logo();
+		drawLogo();
 	}
 
 	public void update()
@@ -47,12 +47,12 @@ public class AbstergoLogo extends UIElement implements Loading
 		counter = ui.millis() / 1000;
 	}
 
-	public int return_timer()
+	public int returnTimer()
 	{
 		return counter;
 	}
 
-	public Boolean check_finish(int timer)
+	public Boolean checkFinish(int timer)
 	{
 		return counter == timer + 5;
 	}

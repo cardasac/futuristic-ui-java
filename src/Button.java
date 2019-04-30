@@ -4,7 +4,6 @@ class Button extends UIElement
 	private float rectHeight;
 	private String text1;
 	private String text2;
-
 	private float textColor;
 	private float backgroundColor;
 
@@ -21,7 +20,7 @@ class Button extends UIElement
 		this.backgroundColor = backgroundColor;
 	}
 
-	public float getX()
+	float getX()
 	{
 		return coordinateX;
 	}
@@ -31,7 +30,7 @@ class Button extends UIElement
 		this.coordinateX = x;
 	}
 
-	public float getY()
+	float getY()
 	{
 		return coordinateY;
 	}
@@ -41,7 +40,7 @@ class Button extends UIElement
 		this.coordinateY = y;
 	}
 
-	public float getRectWidth()
+	float getRectWidth()
 	{
 		return rectWidth;
 	}
@@ -51,7 +50,7 @@ class Button extends UIElement
 		this.rectWidth = rectWidth;
 	}
 
-	public float getRectHeight()
+	float getRectHeight()
 	{
 		return rectHeight;
 	}
@@ -64,7 +63,6 @@ class Button extends UIElement
 	void render()
 	{
 		ui.fill(backgroundColor);
-//		ui.stroke(backgroundColor);
 		ui.noStroke();
 		ui.rect(coordinateX, coordinateY, rectWidth, rectHeight, ui.width / 64);
 

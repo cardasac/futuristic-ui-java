@@ -20,7 +20,7 @@ public class UI extends PApplet
 	private ArrayList<DNA> dna2 = new ArrayList<>();
 	private ArrayList<MenuOptions> menu = new ArrayList<>();
 	private ArrayList<MenuOptions> options = new ArrayList<>();
-	private LoadingText loading_message;
+	private LoadingText loadingMessage;
 	private AbstergoLogo abstergoLogo;
 	private MemoryLegend memoryLegend1;
 	private MemoryLegend memoryLegend2;
@@ -41,8 +41,8 @@ public class UI extends PApplet
 
 	public void setup()
 	{
-		PFont my_font = createFont("Arial", width / 20, true);
-		textFont(my_font);
+		PFont myFont = createFont("Arial", width / 20, true);
+		textFont(myFont);
 		loadMenuOptions("menu.csv", this.menu);
 		loadMenuOptions("options.csv", this.options);
 		setMenu();
@@ -63,7 +63,7 @@ public class UI extends PApplet
 		String strDate = dateFormat.format(new Date());
 
 		String message = "Dublin // Ireland " + strDate + " ";
-		loading_message = new LoadingText(this, width / 8, height / 2, message);
+		loadingMessage = new LoadingText(this, width / 8, height / 2, message);
 		abstergoLogo = new AbstergoLogo(this, width / 2, height / 2);
 
 		PVector al = new PVector(width - width / 4, height / 9);
@@ -88,11 +88,10 @@ public class UI extends PApplet
 		float rectHeight = height / 6;
 		for (int i = 0; i < menu.size(); i++)
 		{
-			float textPlacementX = ratio + (ratio + rectWidth) * i + rectWidth / 2;
-			float textPlacementY = height - height / 3;
-			float ratioFormula = ratio + (ratio + rectWidth) * i;
+			float ratioFormulaX = ratio + (ratio + rectWidth) * i;
+			float ratioFormulaY = height - height / 3;
 			MenuOptions p = menu.get(i);
-			Button but = new Button(this, ratioFormula, textPlacementY, rectWidth, rectHeight, p.getName(), p.getDescription(), 0, 255);
+			Button but = new Button(this, ratioFormulaX, ratioFormulaY, rectWidth, rectHeight, p.getName(), p.getDescription(), 0, 255);
 			menuButtonList.add(but);
 		}
 	}
@@ -104,11 +103,10 @@ public class UI extends PApplet
 		float rectHeight = height / 10;
 		for (int i = 0; i < options.size(); i++)
 		{
-			float textPlacementX = ratio + (ratio + rectWidth) * i + rectWidth / 2;
-			float textPlacementY = height / 2.25f;
-			float ratioFormula = ratio + (ratio + rectWidth) * i;
+			float ratioFormulaX = ratio + (ratio + rectWidth) * i;
+			float ratioFormulaY = height / 2.25f;
 			MenuOptions p = options.get(i);
-			Button but = new Button(this, ratioFormula, textPlacementY, rectWidth, rectHeight,  p.getName(), p.getDescription(), 255, 0);
+			Button but = new Button(this, ratioFormulaX, ratioFormulaY, rectWidth, rectHeight, p.getName(), p.getDescription(), 255, 0);
 			optionButtonList.add(but);
 		}
 	}
@@ -132,12 +130,12 @@ public class UI extends PApplet
 	private void drawLines(int y)
 	{
 		float ratio = width / 10;
-		float line_size = ratio * (8 / 3f);
+		float lineSize = ratio * (8 / 3f);
 
 		for (int i = 0; i < 3; i++)
 		{
 			stroke(255);
-			line((line_size + ratio) * i, y, line_size * (i + 1) + ratio * (i), y);
+			line((lineSize + ratio) * i, y, lineSize * (i + 1) + ratio * (i), y);
 		}
 	}
 
@@ -157,7 +155,7 @@ public class UI extends PApplet
 
 	public void mouseClicked()
 	{
-		if (abstergoLogo.check_finish(timer))
+		if (abstergoLogo.checkFinish(timer))
 		{
 			for (Button b : menuButtonList)
 			{
@@ -179,7 +177,7 @@ public class UI extends PApplet
 
 	private void overButton()
 	{
-		if (abstergoLogo.check_finish(timer))
+		if (abstergoLogo.checkFinish(timer))
 		{
 			for (Button b : menuButtonList)
 			{
@@ -218,11 +216,14 @@ public class UI extends PApplet
 
 		stroke(0);
 		noFill();
-		rect(width / 2f - rectWidth / 2f, height / 9, rectWidth, rectHeight);
+		rect(width / 2f - rectWidth / 2f, height / 9, rectWidth, rectHeight, height / 64);
 
 		stroke(0);
 		fill(255);
-		rect(width / 2f - rectWidth / 2f, height / 9, map1, rectHeight);
+		if (map1 != 0)
+		{
+			rect(width / 2f - rectWidth / 2f, height / 9, map1, rectHeight, height / 64);
+		}
 
 		switch (volume)
 		{
@@ -276,14 +277,14 @@ public class UI extends PApplet
 		stroke(255, 20);
 		line(width - width / 5, 0, width / 5, height);
 
-		timer = loading_message.return_timer();
+		timer = loadingMessage.returnTimer();
 
-		if (!loading_message.check_finish(timer))
+		if (!loadingMessage.checkFinish(timer))
 		{
-			loading_message.render();
-			loading_message.update();
+			loadingMessage.render();
+			loadingMessage.update();
 		}
-		else if (!abstergoLogo.check_finish(timer))
+		else if (!abstergoLogo.checkFinish(timer))
 		{
 			abstergoLogo.render();
 			abstergoLogo.update();

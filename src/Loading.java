@@ -4,7 +4,7 @@ public interface Loading
 
 	void update();
 
-	int return_timer();
+	int returnTimer();
 
-	Boolean check_finish(int timer);
+	Boolean checkFinish(int timer);
 }
