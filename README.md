@@ -3,6 +3,8 @@ Object Oriented Programming Assignment programmed on Java along with Processing 
 
 This assignment is meant to test and improve our understanding of Java, OOP fundamentals and version control with Git and GitHub.
 
+[Demo on YouTube](https://youtu.be/8lp-x6DPZnM)
+
 ## Details
 
 | Category | Description |
