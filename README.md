@@ -71,22 +71,47 @@ I wanted to implement two other features to the interface, one being a fading in
 
 # Examples
 
-## Grid Building
+## Grid
 
-## Inheritances
+![Grid](https://github.com/AlexandruCardas/AC_UI/blob/master/images/Grid.png)
 
-## Abstractions
+## Inheritance
 
-## Interfaces
+![Inheritance](https://github.com/AlexandruCardas/AC_UI/blob/master/images/Inheritance.png)
+
+## Abstraction
+
+![Abstract](https://github.com/AlexandruCardas/AC_UI/blob/master/images/Abstract.png)
+
+## Interface
+
+![Interface](https://github.com/AlexandruCardas/AC_UI/blob/master/images/Interface.png)
 
 ## Timer
 
+![Timer 1](https://github.com/AlexandruCardas/AC_UI/blob/master/images/Timer1.png)
+![Timer 2](https://github.com/AlexandruCardas/AC_UI/blob/master/images/Timer2.png)
+
 ## Flow
+
+![Flow](https://github.com/AlexandruCardas/AC_UI/blob/master/images/Flow.png)
 
 ## Map
 
+![Map](https://github.com/AlexandruCardas/AC_UI/blob/master/images/Map.png)
+
 ## Logo
+
+![Logo](https://github.com/AlexandruCardas/AC_UI/blob/master/images/Abstergo.png)
 
 ## DNA
 
+![DNA](https://github.com/AlexandruCardas/AC_UI/blob/master/images/DNA.png)
+
 ## Constructor
+
+![Constructor](https://github.com/AlexandruCardas/AC_UI/blob/master/images/Constructor.png)
+
+## Vector
+
+![Vector](https://github.com/AlexandruCardas/AC_UI/blob/master/images/Vector.png)
