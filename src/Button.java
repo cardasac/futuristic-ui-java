@@ -4,20 +4,17 @@ class Button extends UIElement
 	private float rectHeight;
 	private String text1;
 	private String text2;
-	private float textPlacementX;
-	private float textPlacementY;
+
 	private float textColor;
 	private float backgroundColor;
 
-	Button(UI ui, float x, float y, float rectWidth, float rectHeight, float textPlacementX, float textPlacementY, String text1, String text2, float textColor, float backgroundColor)
+	Button(UI ui, float x, float y, float rectWidth, float rectHeight, String text1, String text2, float textColor, float backgroundColor)
 	{
 		this.ui = ui;
 		this.coordinateX = x;
 		this.coordinateY = y;
 		this.rectWidth = rectWidth;
 		this.rectHeight = rectHeight;
-		this.textPlacementX = textPlacementX;
-		this.textPlacementY = textPlacementY;
 		this.text1 = text1;
 		this.text2 = text2;
 		this.textColor = textColor;
@@ -74,13 +71,14 @@ class Button extends UIElement
 		ui.fill(textColor);
 		ui.textAlign(ui.CENTER, ui.CENTER);
 		ui.textSize(ui.width / 40);
-		ui.text(text1, textPlacementX, textPlacementY + rectHeight / 2);
+		ui.text(text1, coordinateX + rectWidth / 2, coordinateY + rectHeight / 2);
 
 		ui.fill(textColor);
 		ui.textAlign(ui.CENTER, ui.CENTER);
 		ui.textSize(ui.width / 60);
-		ui.text(text2, textPlacementX, textPlacementY + rectHeight / 1.25f);
+		ui.text(text2, coordinateX + rectWidth / 2, coordinateY + rectHeight / 1.25f);
 	}
+
 	void update()
 	{
 
