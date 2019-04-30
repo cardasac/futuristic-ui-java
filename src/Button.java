@@ -69,7 +69,7 @@ class Button extends UIElement
 		ui.fill(backgroundColor);
 //		ui.stroke(backgroundColor);
 		ui.noStroke();
-		ui.rect(coordinateX, coordinateY, rectWidth, rectHeight, 35);
+		ui.rect(coordinateX, coordinateY, rectWidth, rectHeight, ui.width / 64);
 
 		ui.fill(textColor);
 		ui.textAlign(ui.CENTER, ui.CENTER);
@@ -78,10 +78,9 @@ class Button extends UIElement
 
 		ui.fill(textColor);
 		ui.textAlign(ui.CENTER, ui.CENTER);
-		ui.textSize(ui.width / 80);
+		ui.textSize(ui.width / 60);
 		ui.text(text2, textPlacementX, textPlacementY + rectHeight / 1.25f);
 	}
-
 	void update()
 	{
 

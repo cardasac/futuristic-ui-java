@@ -5,7 +5,7 @@ class DNA extends UIElement
 	private float radius;
 	private float translate_x;
 	private float translate_y;
-	private float rotate_x;
+	private float rotateByX;
 	private float translateAll;
 	private float color;
 
@@ -24,7 +24,7 @@ class DNA extends UIElement
 		ui.pushMatrix();
 
 		ui.translate(translate_x, translate_y);
-		ui.rotateX(rotate_x);
+		ui.rotateX(rotateByX);
 		ui.translate(translate_x, -translate_y);
 
 		ui.noStroke();
@@ -47,7 +47,7 @@ class DNA extends UIElement
 
 	void update()
 	{
-		rotate_x = coordinateX + radians(ui.frameCount);
+		rotateByX = coordinateX + radians(ui.frameCount);
 		translate_y = coordinateY + translateAll;
 		translate_x = 0;
 	}
