@@ -40,7 +40,11 @@ This option is self explanatory. Once clicked, it will exit and terminate the pr
 
 There is magic involved. Just kidding. Every element on the screen is an object unless it represents only the text. Coordinates are being passed to each object and they all posses a render and update method in order to first initialize them and then animate different parts. I used seconds, `millis()` function to animate my objects. The 3D parts are translated and rotated so that they remain on the same X coordinate while rotating around the X axis, changing their Y coordinate.
 
-The typewriter was implemented using `substring` function and increasing the counter for the loop printing the letters using the time elapsed.Events are synchronized using a timer that is being passed around and to which we can add more seconds and increase the length of the loading sequence.
+The typewriter was implemented using `substring()` function and increasing the counter for the loop printing the letters using the time elapsed. Events are synchronized using a timer that is being passed around and to which we can add more seconds and increase the length of the loading sequence.
+
+The volume buttons adjust the gain rather than the volume itself since `setVolume()` does not work. `setGain()` and `shiftGain()` achieve similar results but they increase and decrease decibels and the range goes from 6 to -80. Since -45 is mute and the gain starts at 0, I mapped the decibels range from 0 to -45.
+
+For music I used Minim libraries and the AudioPlayer. The song is taken from the Assassin's Creed Brotherhood OST.
 
 # Pride Points
 
@@ -54,7 +58,7 @@ Mouse clicking was very easy to implement since each button can have its coordin
 
 ## Learning
 
-I did learn a great deal of Java while building this small project. I also learned a lot about myself, I discovered what I am good at and what I need to improve on.
+I learned a great deal of Java while building this small project. Moreover I reinforced my understanding on classes, abstraction, inheritance, interfaces and also improved my coding efficiency and speed. I also learned a lot about myself, I discovered what I am good at and what I need to improve on.
 
 ## Code
 
