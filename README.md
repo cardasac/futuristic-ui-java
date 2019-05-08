@@ -7,7 +7,7 @@ This assignment is meant to test and improve our understanding of Java, OOP fund
 
 > IDE: IntelliJ IDEA Ultimate by JetBrains
 
-[Demo on YouTube](https://youtu.be/8lp-x6DPZnM)
+[![Demo on YouTube](https://img.youtube.com/vi/8lp-x6DPZnM/maxresdefault.jpg)](https://youtu.be/8lp-x6DPZnM)
 
 ## Details
 
