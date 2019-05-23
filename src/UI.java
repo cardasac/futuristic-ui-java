@@ -32,11 +32,11 @@ public class UI extends PApplet
 
 	public void settings()
 	{
-		size(1280, 720, P3D);
+//		size(1280, 720, P3D);
 //		size(1600, 900, P3D);
-//		smooth(8);
-//		fullScreen(P3D);
-		pixelDensity(displayDensity());
+		smooth(8);
+		fullScreen(P3D);
+//		pixelDensity(displayDensity());
 	}
 
 	public void setup()
